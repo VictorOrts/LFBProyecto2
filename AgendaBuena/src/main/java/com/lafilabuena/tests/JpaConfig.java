@@ -1,5 +1,5 @@
 package com.lafilabuena.tests;
-@enablejpa
+//@enablejpa
 public class JpaConfig {
 
 }
