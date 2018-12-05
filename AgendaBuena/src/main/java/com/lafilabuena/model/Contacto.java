@@ -7,20 +7,22 @@
 
 package com.lafilabuena.model;
 
+import java.util.Date;
+
 public class Contacto {
 	private int id;
 	private String nombre;
 	private String apellido1;
 	private String apellido2;
 	private String dni;
-	private int fechanacimiento;
+	private Date fechanacimiento;
 	private Direccion direccion;
 	public Contacto() {
 		
 	}
 	
 	
-	public Contacto(int id, String nombre, String apellido1, String apellido2, String dni, int fechanacimiento,
+	public Contacto(int id, String nombre, String apellido1, String apellido2, String dni, Date fechanacimiento,
 			Direccion direccion) {
 		super();
 		this.id = id;
@@ -96,13 +98,13 @@ public class Contacto {
 	/**
 	 * @return the fechanacimiento
 	 */
-	public int getFechanacimiento() {
+	public Date getFechanacimiento() {
 		return fechanacimiento;
 	}
 	/**
 	 * @param fechanacimiento the fechanacimiento to set
 	 */
-	public void setFechanacimiento(int fechanacimiento) {
+	public void setFechanacimiento(Date fechanacimiento) {
 		this.fechanacimiento = fechanacimiento;
 	}
 	/**
