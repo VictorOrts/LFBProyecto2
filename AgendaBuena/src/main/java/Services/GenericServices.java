@@ -9,17 +9,11 @@
 package Services;
 
 public interface GenericServices {
-
-
-
-
 	public void crear();
 	public void borrar();
 	public void editar();
 	public <T> void buscar(); 
 	public void FichaDetallada();
 	public void listar();
-
-
 
 }
