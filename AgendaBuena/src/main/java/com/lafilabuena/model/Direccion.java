@@ -1,5 +1,5 @@
 package com.lafilabuena.model;
-/**
+/**Clase Direccion
  * 
  * @author Jorge A Avilés Menéndez
  *
@@ -7,6 +7,8 @@ package com.lafilabuena.model;
 public class Direccion {
 
 	private String domicilio;
+	
+	private String localidad;
 	
 	private int codigoPostal;
 	
@@ -63,6 +65,20 @@ public class Direccion {
 	 */
 	public void setProvincia(Provincias provincia) {
 		this.provincia = provincia;
+	}
+
+	/**
+	 * @return the localidad
+	 */
+	public String getLocalidad() {
+		return localidad;
+	}
+
+	/**
+	 * @param localidad the localidad to set
+	 */
+	public void setLocalidad(String localidad) {
+		this.localidad = localidad;
 	}
 	
 	
