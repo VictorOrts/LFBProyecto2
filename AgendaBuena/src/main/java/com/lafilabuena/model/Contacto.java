@@ -9,6 +9,12 @@ package com.lafilabuena.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+@Entity
 public class Contacto {
 	private int id;
 	private String nombre;
@@ -38,6 +44,9 @@ public class Contacto {
 	/**
 	 * @return the id
 	 */
+	@Id
+	@GeneratedValue(strategy= GenerationType.AUTO)
+    @Column(name="idcontacto")
 	public int getId() {
 		return id;
 	}
@@ -116,6 +125,7 @@ public class Contacto {
 	/**
 	 * @param direccion the direccion to set
 	 */
+	
 	public void setDireccion(Direccion direccion) {
 		this.direccion = direccion;
 	}
