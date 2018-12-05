@@ -1,5 +1,6 @@
 package com.lafilabuena.dao;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 import com.lafilabuena.model.Contacto;
@@ -15,6 +16,8 @@ import com.lafilabuena.util.LecturaDatos;
  */
 public class ContactoDaoImp implements GenericDao{
 
+	ArrayList<Contacto> listaContacto =new ArrayList<>();
+	
 	public Contacto crear() {
 		/*System.out.println("Introduce Provincia: ");
 		String prov2;
@@ -79,8 +82,15 @@ public class ContactoDaoImp implements GenericDao{
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println(c1);
+		listaContacto.add(c1);
 		return c1;
 		}
-
+		
+	public void listar() {
+		
+	
+		for(Contacto i: listaContacto) {
+			System.out.println(i);
+		}
+	}
 }

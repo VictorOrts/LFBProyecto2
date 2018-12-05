@@ -15,6 +15,9 @@ public class AgendaBuenaApplication {
 		
 		GenericDao dao=new ContactoDaoImp();
 		dao.crear();
+		dao.crear();
+		dao.crear();
+		dao.listar();
 		
 	}
 }
