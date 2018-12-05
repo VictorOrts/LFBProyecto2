@@ -18,12 +18,17 @@ public class Direccion {
 		
 	}
 
-	public Direccion(String domicilio, int codigoPostal, Provincias provincia) {
+	
+
+	public Direccion(String domicilio, String localidad, int codigoPostal, Provincias provincia) {
 		super();
 		this.domicilio = domicilio;
+		this.localidad = localidad;
 		this.codigoPostal = codigoPostal;
 		this.provincia = provincia;
 	}
+
+
 
 	/**
 	 * @return the domicilio
@@ -79,6 +84,24 @@ public class Direccion {
 	 */
 	public void setLocalidad(String localidad) {
 		this.localidad = localidad;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Direccion [domicilio=");
+		builder.append(domicilio);
+		builder.append(", localidad=");
+		builder.append(localidad);
+		builder.append(", codigoPostal=");
+		builder.append(codigoPostal);
+		builder.append(", provincia=");
+		builder.append(provincia);
+		builder.append("]");
+		return builder.toString();
 	}
 	
 	
