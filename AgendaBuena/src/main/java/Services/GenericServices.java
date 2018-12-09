@@ -8,6 +8,9 @@
  */
 package Services;
 
+import org.springframework.stereotype.Service;
+
+@Service("genericServices")
 public interface GenericServices {
 	public void crear();
 	public void borrar();
