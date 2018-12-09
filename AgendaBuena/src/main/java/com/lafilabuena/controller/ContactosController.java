@@ -1,21 +1,40 @@
 package com.lafilabuena.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.ModelAndView;
 
-import com.lafilabuena.model.Contacto;
+import Services.ContactosServicesImpl;
+import Services.GenericServices;
 
-@RestController
+/*
+ * 
+ * @author Jose M. Vicente
+ */
+
+@Controller("contactosController")
 public class ContactosController {
-	@Autowired
-	//private ContactosServices services;
 	
-	@RequestMapping()
-	public List<Contacto> getContactos(){
-		return null;
+	@Autowired
+	@Qualifier("genericServices")
+	public GenericServices genericServices;
+	
+
+	
+	public ModelAndView listarContactos(){
+		ModelAndView mv=new ModelAndView();
+		mv.addObject("contactos", genericServices.listar());
 	}
 	
+	
+//	@Autowired
+//	//private ContactosServices services;
+//	
+//	@RequestMapping()
+//	public List<Contacto> getContactos(){
+//		return null;
+//	}
+//	
 }
