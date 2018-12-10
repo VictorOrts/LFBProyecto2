@@ -10,21 +10,23 @@
 package com.lafilabuena.services;
 
 
-import com.lafilabuena.dao.ContactoDaoImp;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.lafilabuena.dao.ContactoRepository;
 
 
 
 
 public class ContactosServicesImpl implements GenericServices{
 	
-	
-	private ContactoDaoImp contacto= new ContactoDaoImp();
+	@Autowired
+	private ContactoRepository contacto;
 	
 	
 	@Override
 	public void crear() {
 		// TODO Auto-generated method stub
-		contacto.crear();
+		//contacto.crear();
 		
 	}
 	

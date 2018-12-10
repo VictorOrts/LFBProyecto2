@@ -30,13 +30,15 @@ public class ContactosController {
 
 	@GetMapping("/")
 	public ModelAndView listarContactos(){
-		ModelAndView mv=new ModelAndView();
-		mv.addObject("contactos", genericServices.listar());
+		//ModelAndView mv=new ModelAndView();
+		//mv.addObject("contactos", genericServices.listar());
+		return null;
 	}
 	@PostMapping("/crearusuario")
 	public String crearUsuario(@ModelAttribute (name="Contacto") Contacto contacto, Model model) {
-		genericServices.crear(contacto);
-		return "redirect:/***MODIFICAR**** pagina de listar contactos o lo que sea";
+		//genericServices.crear(contacto);
+		//return "redirect:/***MODIFICAR**** pagina de listar contactos o lo que sea";
+		return null;
 		
 	}
 	
