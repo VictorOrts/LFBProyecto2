@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Ficha Detallada</title>
+</head>
+
+<body>
+
+    <h1>Ficha Detallada</h1>
+    
+  <table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Ficha Contacto</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-info">
+      <th scope="row">1</th>
+      <td>Nombre</td>
+      <td>
+      <span th:text="${contacto.nombre}"></span> 
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Primer apellido</td>
+      <td> <span th:text="${contacto.primer_apellido}"></span> </td>
+    </tr>
+     <tr>
+      <th scope="row">3</th>
+      <td>Segundo apellido</td>
+      <td> <span th:text="${contacto.segundo_apellido}"></span> </td>
+    </tr>
+     <tr>
+      <th scope="row">4</th>
+      <td>DNI</td>
+      <td> <span th:text="${contacto.dni}"></span> </td>
+    </tr>
+     <tr>
+      <th scope="row">5</th>
+      <td>Fecha de nacimiento</td>
+      <td> <span th:text="${contacto.fecha_nacimiento}"></span> </td>
+    </tr>
+     <tr>
+      <th scope="row">6</th>
+      <td>Provincia</td>
+      <td> <span th:text="${contacto.direccion.getProvincia}"></span> </td>
+    </tr>
+      <tr>
+      <th scope="row">7</th>
+      <td>Localidad</td>
+      <td> <span th:text="${contacto.direccion.localidad}"></span> </td>
+    </tr>
+      <tr>
+      <th scope="row">8</th>
+      <td>Domicilio</td>
+      <td> <span th:text="${contacto.direccion.domicilio}"></span> </td>
+    </tr>
+      <tr>
+      <th scope="row">9</th>
+      <td>Código postal</td>
+      <td> <span th:text="${contacto.direccion.codigoPostal}"></span> </td>
+    </tr>
+  </tbody>
+</table>
+
+
+	
+</body>
+</html>
