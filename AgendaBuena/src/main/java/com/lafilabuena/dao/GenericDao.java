@@ -1,6 +1,6 @@
 package com.lafilabuena.dao;
 
-import com.lafilabuena.model.Contacto;
+
 
 public interface GenericDao<T> {
 
