@@ -25,13 +25,13 @@ public class Contacto {
 	private int id;
 	@Column(name="nombre")
 	private String nombre;
-	@Column(name="primer_apellido")
+	@Column(name="apellido1")
 	private String apellido1;
-	@Column(name="segundo_apellido")
+	@Column(name="apellido2")
 	private String apellido2;
 	@Column(name="dni")
 	private String dni;
-	@Column(name="fecha_nacimiento")
+	@Column(name="fechanacimiento")
 	private Date fechanacimiento;
 	//@Column(name="direccion")
 	//private Direccion direccion;

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.ModelAndViewDefiningException;
 
 import com.lafilabuena.model.Contacto;
 
@@ -37,12 +38,22 @@ public class ContactosController {
 		
 	}
 	@PostMapping("/crearusuario")
-	public Contacto crearUsuario(@ModelAttribute (name="contacto") Contacto contacto, Model model) {
+	public String crearUsuario(@ModelAttribute (name="contacto") Contacto contacto, Model model) {
+		contactServices.crear(contacto);
 		
-		return contactServices.crear(contacto);
+		return "redirect:/";
 		
 	}
 	
+	
+	@GetMapping("/fichadetallada")
+	public Contacto fichaDetallada(int id) {
+		Contacto contacto=new Contacto();
+		
+		contactServices.FichaDetallada(id);
+		return contacto;
+		
+	}
 	
 
 	
@@ -67,4 +78,5 @@ public class ContactosController {
 //		return null;
 //	}
 //	
+	
 }
