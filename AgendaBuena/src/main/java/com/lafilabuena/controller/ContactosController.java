@@ -7,7 +7,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.ModelAndViewDefiningException;
 
 import com.lafilabuena.model.Contacto;
 
@@ -37,13 +39,39 @@ public class ContactosController {
 		
 	}
 	@PostMapping("/crearusuario")
-	public Contacto crearUsuario(@ModelAttribute (name="contacto") Contacto contacto, Model model) {
+	public String crearUsuario(@ModelAttribute (name="contacto") Contacto contacto, Model model) {
+		contactServices.crear(contacto);
 		
-		return contactServices.crear(contacto);
+		return "redirect:/";
 		
 	}
 	
+	@GetMapping("/borrar")
+	public ModelAndView delete(@RequestParam(name="name", required=true)int id) {
+		contactServices.borrar(id);
+		return listarContactos();
+	}
 	
+//	@GetMapping("/buscar")
+//	public ModelAndView buscar(@RequestParam(name="name", required=true)Contacto contacto) {
+//		ModelAndView mv=new ModelAndView("view1");
+//		contacto.getNombre();
+//		
+//	Buscar en la query de mario con contacto.getnombre
+//		
+//		return mv;
+//	}
+	
+	
+//	@GetMapping("/fichadetallada")
+//	public Contacto fichaDetallada(int id) {
+//		Contacto contacto=new Contacto();
+//		
+//		contactServices.FichaDetallada(id);
+//		return contacto;
+//		
+//	}
+//	
 
 	
 	
@@ -67,4 +95,5 @@ public class ContactosController {
 //		return null;
 //	}
 //	
+	
 }
