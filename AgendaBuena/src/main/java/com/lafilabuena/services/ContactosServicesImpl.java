@@ -41,7 +41,7 @@ public class ContactosServicesImpl {
 	
 	
 	public void borrar(int id) {
-		contactoRepository.delete(id);
+		contactoRepository.deleteById(id);
 	}
 
 	
@@ -57,7 +57,7 @@ public class ContactosServicesImpl {
 		
 		List<Contacto> busqueda= new ArrayList<>();
 		for (Contacto contacto : query) {
-			contacto.add;
+			
 		}
 		
 		/*List<Contacto> contactos =contactoRepository.findAll();
