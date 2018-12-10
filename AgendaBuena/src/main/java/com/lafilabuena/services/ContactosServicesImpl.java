@@ -55,10 +55,10 @@ public class ContactosServicesImpl {
 		
 		String query = "SELECT * FROM persona WHERE nombre LIKE % "+busco+";";
 		
-		List<Contacto> busqueda= new ArrayList<>();
-		for (Contacto contacto : query) {
-			
-		}
+//		List<Contacto> busqueda= new ArrayList<>();
+//		for (Contacto contacto : query) {
+//			
+//		}
 		
 		/*List<Contacto> contactos =contactoRepository.findAll();
 		for(Contacto tmp : contactos) {

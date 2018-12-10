@@ -45,9 +45,19 @@ public class ContactosController {
 		return "redirect:/";
 		
 	}
+	@GetMapping("/addContacto")
+	private String redirectContactForm(Model model) {
+
+        Contacto contact = new Contacto();
+
+        model.addAttribute("contactModel", contact);
+
+        return "addContacto";
+
+    }
 	
 	@GetMapping("/borrar")
-	public ModelAndView delete(@RequestParam(name="name", required=true)int id) {
+	public ModelAndView delete(@RequestParam(name="id", required=true)int id) {
 		contactServices.borrar(id);
 		return listarContactos();
 	}
