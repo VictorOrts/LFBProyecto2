@@ -10,8 +10,12 @@
 package com.lafilabuena.services;
 
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
+import org.hibernate.annotations.Where;
+import org.hibernate.sql.Select;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -36,8 +40,8 @@ public class ContactosServicesImpl {
 	}
 	
 	
-	public void borrar(Contacto contacto) {
-		contactoRepository.delete(contacto);
+	public void borrar(int id) {
+		contactoRepository.delete(id);
 	}
 
 	
@@ -47,7 +51,14 @@ public class ContactosServicesImpl {
 	}
 
 	
-	public <T> List<Contacto> buscar() {
+	public <T> List<Contacto> buscar(String busco) {
+		
+		String query = "SELECT * FROM persona WHERE nombre LIKE % "+busco+";";
+		
+		List<Contacto> busqueda= new ArrayList<>();
+		for (Contacto contacto : query) {
+			contacto.add;
+		}
 		
 		/*List<Contacto> contactos =contactoRepository.findAll();
 		for(Contacto tmp : contactos) {
