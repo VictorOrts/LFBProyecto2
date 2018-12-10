@@ -12,8 +12,8 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.lafilabuena.model.Contacto;
 
-import Services.ContactosServicesImpl;
-import Services.GenericServices;
+import com.lafilabuena.services.ContactosServicesImpl;
+import com.lafilabuena.services.GenericServices;
 
 /*
  * 
@@ -40,7 +40,7 @@ public class ContactosController {
 		
 	}
 	
-	get
+
 	
 	
 //	@Autowired
