@@ -14,14 +14,26 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 @Entity
+@Table(name="contacto")
+
 public class Contacto {
+	@Id
+	@GeneratedValue
+	@Column(name="id")
 	private int id;
+	@Column(name="nombre")
 	private String nombre;
+	@Column(name="primer_apellido")
 	private String apellido1;
+	@Column(name="segundo_apellido")
 	private String apellido2;
+	@Column(name="dni")
 	private String dni;
+	@Column(name="fecha_nacimiento")
 	private Date fechanacimiento;
+	@Column(name="direccion")
 	private Direccion direccion;
 	public Contacto() {
 		

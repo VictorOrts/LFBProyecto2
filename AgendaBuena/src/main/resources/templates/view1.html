@@ -2,9 +2,53 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8" />
-	<title>Document</title>
+	<title>Agenda</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
-	<h1></h1>
+	<h1>Agenda by lafilabuena</h1>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Primero Apellido</th>
+      <th>Segundo Apellido</th>
+      <th>DNI</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr th:each="contacto : ${contactos}">
+      <td data-th-text="${contacto.id}"> 1</td>
+      <td data-th-text="${contacto.nombre}">Jose</td>
+      <td data-th-text="${contacto.apellido1}">Asus</td>
+      <td data-th-text="${contacto.apellido2}">Laptop</td>
+      <td data-th-text="${contacto.dni}">44884411</td>
+      <td>
+         <a th:href="@{/editarContacto(idContacto=${contacto.id})}" target="">
+             <button type="button" class="btn btn-primary">Editar</button>
+          </a>
+      </td>
+      <td>
+      <button type="button" class="btn btn-primary">Borrar
+      </button>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+   <a th:href="@{/addContacto}" target="">
+    <button type="button" class="btn btn-primary">
+     Añadir Contacto
+    </button>
+    </a>
+ 
+
+    
+
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </body>
 </html>
