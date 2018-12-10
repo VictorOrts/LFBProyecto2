@@ -25,7 +25,7 @@ public class ContactosController {
 	
 	@Autowired
 	@Qualifier("genericServices")
-	public GenericServices genericServices;
+	public ContactosServicesImpl genericServices;
 	
 
 	@GetMapping("/")

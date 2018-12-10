@@ -10,54 +10,68 @@
 package com.lafilabuena.services;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.lafilabuena.dao.ContactoRepository;
+import com.lafilabuena.model.Contacto;
+import com.lafilabuena.model.Provincias;
 
 
 
 
-public class ContactosServicesImpl implements GenericServices{
+public class ContactosServicesImpl {
 	
 	@Autowired
-	private ContactoRepository contacto;
+	private ContactoRepository contactoRepository;
 	
 	
-	@Override
-	public void crear() {
-		// TODO Auto-generated method stub
-		//contacto.crear();
+	
+
+	public Contacto crear(Contacto contacto) {
+		contactoRepository.save(contacto);
+		return contacto;
+	}
+	
+	
+	public void borrar(Contacto contacto) {
+		contactoRepository.delete(contacto);
+	}
+
+	
+	public Contacto editar(Contacto contacto) {
+		contactoRepository.save(contacto);
+		return contacto;
+	}
+
+	
+	public <T> List<Contacto> buscar(Contacto contacto) {
 		
+		/*List<Contacto> contactos =contactoRepository.findAll();
+		for(Contacto tmp : contactos) {
+			if(tmp.getNombre().equals(contacto)) {
+				return contactos;
+			}else {
+				System.out.println("No aparecen usuarios con ese nombre.");
+			}
+		}
+		
+		return contactos;
+		*/
 	}
+		
+
 	
-	@Override
-	public void borrar() {
-		// TODO Auto-generated method stub
-//		contacto.borrar();
+	public void FichaDetallada(int id) {
+		contactoRepository.findById(id);
+		return ;
 	}
 
-	@Override
-	public void editar() {
-		// TODO Auto-generated method stub
-//		contacto.editar();
-	}
-
-	@Override
-	public <T> void buscar() {
-		// TODO Auto-generated method stub
-//		contacto.buscar();
-	}
-
-	@Override
-	public void FichaDetallada() {
-		// TODO Auto-generated method stub
-//		contacto.FichaDetallada();
-	}
-
-	@Override
-	public void listar() {
-		// TODO Auto-generated method stub
-//		contacto.listar();
+	
+	public List<Contacto> listar() {
+		List<Contacto> contactos =contactoRepository.findAll();
+		return contactos;
 	}
 	
 
