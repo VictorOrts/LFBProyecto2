@@ -13,6 +13,7 @@ package com.lafilabuena.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.lafilabuena.dao.ContactoRepository;
 import com.lafilabuena.model.Contacto;
@@ -20,7 +21,7 @@ import com.lafilabuena.model.Provincias;
 
 
 
-
+@Service("contactosServices")
 public class ContactosServicesImpl {
 	
 	@Autowired
@@ -46,7 +47,7 @@ public class ContactosServicesImpl {
 	}
 
 	
-	public <T> List<Contacto> buscar(Contacto contacto) {
+	public <T> List<Contacto> buscar() {
 		
 		/*List<Contacto> contactos =contactoRepository.findAll();
 		for(Contacto tmp : contactos) {
@@ -59,6 +60,7 @@ public class ContactosServicesImpl {
 		
 		return contactos;
 		*/
+		return null;
 	}
 		
 
@@ -70,8 +72,10 @@ public class ContactosServicesImpl {
 
 	
 	public List<Contacto> listar() {
-		List<Contacto> contactos =contactoRepository.findAll();
-		return contactos;
+		//List<Contacto> contactos =;
+		System.out.println("----Imprimiendo la lista");
+		System.out.println(contactoRepository.findAll());
+		return contactoRepository.findAll();
 	}
 	
 

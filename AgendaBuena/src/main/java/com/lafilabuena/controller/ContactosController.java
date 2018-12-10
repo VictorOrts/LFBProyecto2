@@ -1,6 +1,7 @@
 package com.lafilabuena.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +22,7 @@ import com.lafilabuena.services.ContactosServicesImpl;
 public class ContactosController {
 	
 	@Autowired
-	//@Qualifier("genericServices")
+	@Qualifier("contactosServices")
 	public ContactosServicesImpl contactServices;
 	
 	@GetMapping(" ")

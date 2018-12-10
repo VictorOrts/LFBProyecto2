@@ -16,12 +16,12 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
-@Table(name="contacto")
+@Table(name="persona")
 
 public class Contacto {
 	@Id
-	@GeneratedValue
-	@Column(name="id")
+	@GeneratedValue(strategy= GenerationType.AUTO)
+	@Column(name="idpersona")
 	private int id;
 	@Column(name="nombre")
 	private String nombre;
@@ -33,15 +33,15 @@ public class Contacto {
 	private String dni;
 	@Column(name="fecha_nacimiento")
 	private Date fechanacimiento;
-	@Column(name="direccion")
-	private Direccion direccion;
+	//@Column(name="direccion")
+	//private Direccion direccion;
 	public Contacto() {
 		
 	}
 	
 	
-	public Contacto(int id, String nombre, String apellido1, String apellido2, String dni, Date fechanacimiento,
-			Direccion direccion) {
+	public Contacto(int id, String nombre, String apellido1, String apellido2, String dni, Date fechanacimiento
+			/*Direccion direccion*/) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -49,7 +49,7 @@ public class Contacto {
 		this.apellido2 = apellido2;
 		this.dni = dni;
 		this.fechanacimiento = fechanacimiento;
-		this.direccion = direccion;
+		//this.direccion = direccion;
 	}
 
 
@@ -58,7 +58,7 @@ public class Contacto {
 	 */
 	@Id
 	@GeneratedValue(strategy= GenerationType.AUTO)
-    @Column(name="idcontacto")
+    @Column(name="idpersona")
 	public int getId() {
 		return id;
 	}
@@ -131,16 +131,16 @@ public class Contacto {
 	/**
 	 * @return the direccion
 	 */
-	public Direccion getDireccion() {
-		return direccion;
-	}
-	/**
-	 * @param direccion the direccion to set
-	 */
-	
-	public void setDireccion(Direccion direccion) {
-		this.direccion = direccion;
-	}
+//	public Direccion getDireccion() {
+//		return direccion;
+//	}
+//	/**
+//	 * @param direccion the direccion to set
+//	 */
+//	
+//	public void setDireccion(Direccion direccion) {
+//		this.direccion = direccion;
+//	}
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -156,8 +156,8 @@ public class Contacto {
 		builder.append(dni);
 		builder.append(", fechanacimiento=");
 		builder.append(fechanacimiento);
-		builder.append(", direccion=");
-		builder.append(direccion);
+		//builder.append(", direccion=");
+		//builder.append(direccion);
 		builder.append("]");
 		return builder.toString();
 	}
