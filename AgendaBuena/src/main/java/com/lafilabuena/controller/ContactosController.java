@@ -1,21 +1,54 @@
 package com.lafilabuena.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.lafilabuena.model.Contacto;
 
-@RestController
+import Services.ContactosServicesImpl;
+import Services.GenericServices;
+
+/*
+ * 
+ * @author Jose M. Vicente
+ */
+
+@Controller("contactosController")
 public class ContactosController {
-	@Autowired
-	//private ContactosServices services;
 	
-	@RequestMapping()
-	public List<Contacto> getContactos(){
-		return null;
+	@Autowired
+	@Qualifier("genericServices")
+	public GenericServices genericServices;
+	
+
+	@GetMapping("/")
+	public ModelAndView listarContactos(){
+		ModelAndView mv=new ModelAndView();
+		mv.addObject("contactos", genericServices.listar());
+	}
+	@PostMapping("/crearusuario")
+	public String crearUsuario(@ModelAttribute (name="Contacto") Contacto contacto, Model model) {
+		genericServices.crear(contacto);
+		return "redirect:/***MODIFICAR**** pagina de listar contactos o lo que sea";
+		
 	}
 	
+	get
+	
+	
+//	@Autowired
+//	//private ContactosServices services;
+//	
+//	@RequestMapping()
+//	public List<Contacto> getContactos(){
+//		return null;
+//	}
+//	
 }
