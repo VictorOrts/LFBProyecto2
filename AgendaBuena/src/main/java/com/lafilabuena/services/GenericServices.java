@@ -6,7 +6,7 @@
  * version 1.0
  *
  */
-package Services;
+package com.lafilabuena.services;
 
 import org.springframework.stereotype.Service;
 
