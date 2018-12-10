@@ -12,6 +12,7 @@ package com.lafilabuena.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 
 import org.hibernate.annotations.Where;
@@ -31,12 +32,15 @@ public class ContactosServicesImpl {
 	@Autowired
 	private ContactoRepository contactoRepository;
 	
-	
+	public Contacto buscarPorId(int id) {
+		
+		return contactoRepository.findById(id);
+	}
 	
 
 	public Contacto crear(Contacto contacto) {
-		contactoRepository.save(contacto);
-		return contacto;
+		
+		return contactoRepository.save(contacto);
 	}
 	
 	

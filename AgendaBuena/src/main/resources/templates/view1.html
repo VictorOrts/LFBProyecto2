@@ -21,18 +21,18 @@
         </thead>
         <tbody>
             <tr th:each="contacto : ${contactos}">
-                <td data-th-text="${contacto.id}"> 1</td>
-                <td data-th-text="${contacto.nombre}">Jose</td>
-                <td data-th-text="${contacto.apellido1}">Asus</td>
-                <td data-th-text="${contacto.apellido2}">Laptop</td>
-                <td data-th-text="${contacto.dni}">44884411</td>
+                <td data-th-text="${contacto.id}"> </td>
+                <td data-th-text="${contacto.nombre}"></td>
+                <td data-th-text="${contacto.apellido1}"></td>
+                <td data-th-text="${contacto.apellido2}"></td>
+                <td data-th-text="${contacto.dni}"></td>
                 <td>
-                    <a th:href="@{/editarContacto}">
+                    <a th:href="@{/addContacto?id=__${contacto.id}__}">
                         <button type="button" class="btn btn-primary">Editar</button>
                     </a>
                 </td>
                 <td>
-                    <a th:href="@{/borrar?id=__${contacto.id}__}">
+                    <a href:"#" th:href="@{/borrar?id=__${contacto.id}__}">
                         <button type="button" class="btn btn-primary" > Borrar
 	                     </button>
                     </a>
@@ -44,7 +44,7 @@
 
     </tbody>
     </table>
-    <a th:href="@{/addContacto}">
+    <a th:href="@{/addContacto?id=0}">
         <button type="button" class="btn btn-primary">
             Añadir
         </button>
