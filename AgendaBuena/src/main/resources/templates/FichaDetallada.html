@@ -8,66 +8,43 @@
 
 <body>
 
-    <h1>Ficha Detallada</h1>
-    
-  <table class="table">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Ficha Contacto</th>
-      <th>Datos</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="table-info">
-      <th scope="row">1</th>
-      <td>Nombre</td>
-      <td>
-      <span th:text="${contacto.nombre}"></span> 
-      </td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Primer apellido</td>
-      <td> <span th:text="${contacto.primer_apellido}"></span> </td>
-    </tr>
-     <tr>
-      <th scope="row">3</th>
-      <td>Segundo apellido</td>
-      <td> <span th:text="${contacto.segundo_apellido}"></span> </td>
-    </tr>
-     <tr>
-      <th scope="row">4</th>
-      <td>DNI</td>
-      <td> <span th:text="${contacto.dni}"></span> </td>
-    </tr>
-     <tr>
-      <th scope="row">5</th>
-      <td>Fecha de nacimiento</td>
-      <td> <span th:text="${contacto.fecha_nacimiento}"></span> </td>
-    </tr>
-     <tr>
-      <th scope="row">6</th>
-      <td>Provincia</td>
-      <td> <span th:text="${contacto.direccion.provincia}"></span> </td>
-    </tr>
-      <tr>
-      <th scope="row">7</th>
-      <td>Localidad</td>
-      <td> <span th:text="${contacto.direccion.localidad}"></span> </td>
-    </tr>
-      <tr>
-      <th scope="row">8</th>
-      <td>Domicilio</td>
-      <td> <span th:text="${contacto.direccion.domicilio}"></span> </td>
-    </tr>
-      <tr>
-      <th scope="row">9</th>
-      <td>Código postal</td>
-      <td> <span th:text="${contacto.direccion.codigoPostal}"></span> </td>
-    </tr>
-  </tbody>
-</table>
+   <div class="container">
+        <h1>Añadir Usuario</h1>
+        <!--        <form th:attr="*{/contacto}"> -->
+        <form th:action="@{crearusuario}" th:object="${contacto}" method="post">
+            <input type="hidden" th:field="*{id}">
+            <br>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Nombre</label>
+                <input type="text" class="form-control" th:field="*{nombre}" th:value="${name}">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Primer Apellido</label>
+                <input type="text" class="form-control" th:field="*{apellido1}">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Segundo Apellido</label>
+                <input type="text" class="form-control" th:field="*{apellido2}">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput">DNI</label>
+                <input type="text" class="form-control" th:field="*{dni}">
+            </div>
+               <div class="form-group">
+            <select class="custom-select">
+                <option selected>PROVINCIA</option>
+                <option value="1">Barcelona</option>
+                <option value="2">Madrid</option>
+                <option value="3">Valencia</option>
+            </select>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">
+                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                Aceptar
+            </button>
+        </form>
+    </div>
+
 
 
 	

@@ -41,6 +41,18 @@ public class ContactosController {
 
 	}
 
+	@GetMapping("/mostrarFicha")
+	public String fichaDetallada(@RequestParam(name="id") int id, Model model) {
+		
+		Contacto contacto = new Contacto();
+		
+		contacto = contactServices.buscarPorId(id);
+		
+		model.addAttribute("contacto", contacto);
+		return "FichaDetallada";
+		
+	}
+	
 	@PostMapping("/crearusuario")
 	public String crearUsuario(@ModelAttribute(name = "contacto1") Contacto contacto) {
 		contactServices.crear(contacto);
@@ -57,10 +69,7 @@ public class ContactosController {
 			contacto1 = contactServices.buscarPorId(id);
 		}
 		model.addAttribute("contacto1", contacto1);
-//		
-//		Contacto contact = new Contacto();
-//
-//		model.addAttribute("contacto1", contact);
+
 		return "addContacto";
 
 	}
@@ -71,42 +80,5 @@ public class ContactosController {
 		return listarContactos();
 	}
 
-//	@GetMapping("/buscar")
-//	public ModelAndView buscar(@RequestParam(name="name", required=true)Contacto contacto) {
-//		ModelAndView mv=new ModelAndView("view1");
-//		contacto.getNombre();
-//		
-//	Buscar en la query de mario con contacto.getnombre
-//		
-//		return mv;
-//	}
-
-//	@GetMapping("/fichadetallada")
-//	public Contacto fichaDetallada(int id) {
-//		Contacto contacto=new Contacto();
-//		
-//		contactServices.FichaDetallada(id);
-//		return contacto;
-//		
-//	}
-//	
-
-//	@Autowired
-//	//private ContactosServices services;
-//	
-//	@RequestMapping()
-//	public List<Contacto> getContactos(){
-//		return null;
-//	}
-//		}
-
-//	@Autowired
-//	//private ContactosServices services;
-//	
-//	@RequestMapping()
-//	public List<Contacto> getContactos(){
-//		return null;
-//	}
-//	
 
 }
