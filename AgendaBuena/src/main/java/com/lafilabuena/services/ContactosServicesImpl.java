@@ -56,6 +56,7 @@ public class ContactosServicesImpl {
 		return contacto;
 	}
 
+	
 	public List<Contacto> buscarNombre(String busca) {
 		String query = "SELECT * FROM persona WHERE nombre LIKE % "+busca+";";
 		List<Contacto> busqueda= new ArrayList<>();
@@ -81,7 +82,6 @@ public class ContactosServicesImpl {
 	}
 
 
-	
 	public void FichaDetallada(int id) {
 		contactoRepository.findById(id);
 		return ;
