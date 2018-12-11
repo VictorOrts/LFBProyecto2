@@ -1,5 +1,8 @@
 package com.lafilabuena;
-
+/**Clase Test01
+ *  para comprobar que el controlador funciona
+ * @author Jorge A Avilés Menéndez
+ */
 import static org.assertj.core.api.Assertions.assertThat;
 
 

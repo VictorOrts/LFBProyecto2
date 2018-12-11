@@ -56,6 +56,7 @@ public class ContactosServicesImpl {
 		return contacto;
 	}
 
+	
 	public List<Contacto> buscarNombre(String busca) {
 		String query = "SELECT * FROM persona WHERE nombre LIKE % "+busca+";";
 		List<Contacto> busqueda= new ArrayList<>();
@@ -71,7 +72,7 @@ public class ContactosServicesImpl {
 		
 		if(busqueda==null || busqueda.size()==0) {
 			System.out.println("No existen contactos con ese nombre");
-			System.out.println("Estos son los contactos creados: ");
+			System.out.println("Estos son los contactos existentes: ");
 			return contactos;
 		}else {
 			System.out.println("Los contactos encontrados son: ");
@@ -81,7 +82,6 @@ public class ContactosServicesImpl {
 	}
 
 
-	
 	public void FichaDetallada(int id) {
 		contactoRepository.findById(id);
 		return ;
