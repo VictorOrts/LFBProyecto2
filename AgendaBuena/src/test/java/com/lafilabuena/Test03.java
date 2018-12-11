@@ -1,6 +1,6 @@
 package com.lafilabuena;
 /**clase Test03
- * comprobar que el metodo crear devuelve un obj vacio
+ * comprobar que el metodo crear devuelve un obj que no este vacio
  * @author Jorge A Avilés Menéndez
  */
 
@@ -31,6 +31,12 @@ public class Test03 {
 	
 	@Test
 	public void crearContacto() throws Exception {
+		c1.setNombre("jorge");
+		c1.setApellido1("Aviles");
+		c1.setApellido2("Menendez");
+		c1.setDireccion("calle alcalde");
+		c1.setDni("5848694E");
+		
 		assertNotNull(contactosServices.crear(c1));
 	}
 	
