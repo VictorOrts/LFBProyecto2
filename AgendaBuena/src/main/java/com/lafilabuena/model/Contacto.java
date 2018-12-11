@@ -9,11 +9,15 @@ package com.lafilabuena.model;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
@@ -56,6 +60,13 @@ public class Contacto {
 //	@Column(name="provincia")
 //	private Provincias provincia;
 //	
+	
+	@Column(name="provincia")
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name="personas_provincias", joinColumns=@JoinColumn(name="idprovincias",referencedColumnName="idprovincias"),
+	   inverseJoinColumns=@JoinColumn(name="idpersona",referencedColumnName="idpersonas"))
+	private Provincias provincia;
+	
 	public Contacto() {
 		
 	}

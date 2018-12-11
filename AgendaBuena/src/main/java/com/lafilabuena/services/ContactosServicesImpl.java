@@ -56,30 +56,30 @@ public class ContactosServicesImpl {
 		return contacto;
 	}
 
-	
-	public <T> List<Contacto> buscar(String busco) {
+	public List<Contacto> buscarNombre(String busca) {
+		String query = "SELECT * FROM persona WHERE nombre LIKE % "+busca+";";
+		List<Contacto> busqueda= new ArrayList<>();
+		List<Contacto> contactos =contactoRepository.findAll();
 		
-		String query = "SELECT * FROM persona WHERE nombre LIKE % "+busco+";";
-		
-//		List<Contacto> busqueda= new ArrayList<>();
-//		for (Contacto contacto : query) {
-//			
-//		}
-		
-		/*List<Contacto> contactos =contactoRepository.findAll();
-		for(Contacto tmp : contactos) {
-			if(tmp.getNombre().equals(contacto)) {
-				return contactos;
+		for (Contacto tmp : contactos) {
+			if(tmp.getNombre().equals(busca)) {
+				busqueda.add(tmp);
 			}else {
-				System.out.println("No aparecen usuarios con ese nombre.");
-			}
+				//contactos.remove(tmp.getId());
+			}	
 		}
 		
-		return contactos;
-		*/
-		return null;
+		if(busqueda==null || busqueda.size()==0) {
+			System.out.println("No existen contactos con ese nombre");
+			System.out.println("Estos son los contactos creados: ");
+			return contactos;
+		}else {
+			System.out.println("Los contactos encontrados son: ");
+			return busqueda;
+		}
+				
 	}
-		
+
 
 	
 	public void FichaDetallada(int id) {
@@ -90,6 +90,7 @@ public class ContactosServicesImpl {
 	
 	public List<Contacto> listar() {
 		//List<Contacto> contactos =;
+		buscarNombre("Victor");
 		System.out.println("----Imprimiendo la lista");
 		System.out.println(contactoRepository.findAll());
 		return contactoRepository.findAll();
