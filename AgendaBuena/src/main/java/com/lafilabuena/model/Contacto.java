@@ -7,8 +7,10 @@
 
 package com.lafilabuena.model;
 
-import java.util.Date;
+
 import com.lafilabuena.model.Provincias;
+
+import java.sql.Date;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -277,19 +279,13 @@ public class Contacto {
 		this.direccion = direccion;
 	}
 
-	/**
-	 * @return the provincia
-	 */
-//	public Provincias getProvincia() {
-//		return provincia;
-//	}
+	public Provincias getProvincia() {
+		return provincia;
+	}
 
-	/**
-	 * @param provincia the provincia to set
-	 */
-//	public void setProvincia(Provincias provincia) {
-//		this.provincia = provincia;
-//	}
+	public void setProvincia(Provincias provincia) {
+		this.provincia = provincia;
+	}
 
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
