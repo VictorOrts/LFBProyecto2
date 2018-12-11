@@ -35,7 +35,7 @@ public class Test04 {
 	public void buscarContacto() throws Exception{
 		contactosServices.buscarNombre("Victor");
 		
-//en el test no se podría hacer que te muestre lo que hay, o simplemente, por el color verde, hay que creerse que funciona?
+
 		
 		
 		
