@@ -21,7 +21,7 @@ public class Provincias {
 	@Id
 	@GeneratedValue(strategy= GenerationType.AUTO)
 	@Column(name="idprovincia")
-	private int id;
+	private int idprovincia;
 	@Column(name="provincia")
 	private String provincia;
 	
@@ -33,9 +33,9 @@ public class Provincias {
 	 * @param id
 	 * @param provincia
 	 */
-	public Provincias(int id, String provincia) {
+	public Provincias(int idprovincia, String provincia) {
 		super();
-		this.id = id;
+		this.idprovincia = idprovincia;
 		this.provincia = provincia;
 	}
 
@@ -44,15 +44,12 @@ public class Provincias {
 	 */
 	@Id
 	@GeneratedValue(strategy= GenerationType.AUTO)
-	public int getId() {
-		return id;
+	public int getIdprovincia() {
+		return idprovincia;
 	}
 
-	/**
-	 * @param id the id to set
-	 */
-	public void setId(int id) {
-		this.id = id;
+	public void setIdprovincia(int idprovincia) {
+		this.idprovincia = idprovincia;
 	}
 
 	/**
@@ -61,6 +58,8 @@ public class Provincias {
 	public String getProvincia() {
 		return provincia;
 	}
+
+
 
 	/**
 	 * @param provincia the provincia to set
@@ -76,7 +75,7 @@ public class Provincias {
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Provincias [id=");
-		builder.append(id);
+		builder.append(idprovincia);
 		builder.append(", provincia=");
 		builder.append(provincia);
 		builder.append("]");
