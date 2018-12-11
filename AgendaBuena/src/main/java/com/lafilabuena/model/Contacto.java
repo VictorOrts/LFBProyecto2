@@ -15,6 +15,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.validator.constraints.Length;
 @Entity
 @Table(name="persona")
 
@@ -24,6 +27,8 @@ public class Contacto {
 	@Column(name="idpersona")
 	private int id;
 	@Column(name="nombre")
+	@NotEmpty(message="Introduce un nombre, por favor")
+	@Length(min=3, message="Tu nombre debe tener al menos 3 caracteres")
 	private String nombre;
 	@Column(name="apellido1")
 	private String apellido1;
@@ -33,6 +38,18 @@ public class Contacto {
 	private String dni;
 	@Column(name="fechanacimiento")
 	private Date fechanacimiento;
+	@Column(name="telefono1")
+	@NotEmpty(message="Introduce un teléfono, por favor")
+	@Length(min=9, message="Tu teléfono debe tener 9 dígitos")
+	private int telefono1;
+	@Column(name="telefono2")
+	private int telefono2;
+	@Column(name="telefono3")
+	private int telefono3;
+	@Column(name="telefono4")
+	private int telefono4;
+	@Column(name="telefono5")
+	private int telefono5;
 	//@Column(name="direccion")
 	//private Direccion direccion;
 	public Contacto() {
