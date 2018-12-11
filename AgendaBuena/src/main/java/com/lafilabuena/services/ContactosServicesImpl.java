@@ -56,10 +56,11 @@ public class ContactosServicesImpl {
 		return contacto;
 	}
 
-	public List buscar(String busca) {
+	public List<Contacto> buscar(String busca) {
 		String query = "SELECT * FROM persona WHERE nombre LIKE % "+busca+";";
 		List<Contacto> busqueda= new ArrayList<>();
 		List<Contacto> contactos =contactoRepository.findAll();
+		
 		for (Contacto tmp : contactos) {
 			if(tmp.getNombre().equals(busca)) {
 				busqueda.add(tmp);
@@ -75,11 +76,8 @@ public class ContactosServicesImpl {
 		}else {
 			System.out.println("Los contactos encontrados son: ");
 			return busqueda;
-			
 		}
-		
-		
-		
+				
 	}
 
 
