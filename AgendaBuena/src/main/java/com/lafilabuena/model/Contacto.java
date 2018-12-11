@@ -8,6 +8,7 @@
 package com.lafilabuena.model;
 
 import java.util.Date;
+import com.lafilabuena.model.Provincias;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -43,8 +44,8 @@ public class Contacto {
 	@Column(name="fechanacimiento")
 	private Date fechanacimiento;
 	@Column(name="telefono1")
-//	@NotEmpty(message="Introduce un teléfono, por favor")
-//	@Length(min=9, message="Tu teléfono debe tener 9 dígitos")
+	//@NotEmpty(message="Introduce un teléfono, por favor")
+	//@Length(min=9, message="Tu teléfono debe tener 9 dígitos")
 	private int telefono1;
 	@Column(name="telefono2")
 	private int telefono2;
@@ -56,15 +57,14 @@ public class Contacto {
 	private int telefono5;
 	@Column(name="direccion")
 	private String direccion;
-//	//@Autowired
-//	@Column(name="provincia")
-//	private Provincias provincia;
-//	
+	
+
+	
 	
 	@Column(name="provincia")
 	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name="personas_provincias", joinColumns=@JoinColumn(name="idprovincias",referencedColumnName="idprovincias"),
-	   inverseJoinColumns=@JoinColumn(name="idpersona",referencedColumnName="idpersonas"))
+	@JoinTable(name="personas_provincias", joinColumns=@JoinColumn(name="idprovincia",referencedColumnName="idprovincia"),
+	   inverseJoinColumns=@JoinColumn(name="idpersona",referencedColumnName="idpersona"))
 	private Provincias provincia;
 	
 	public Contacto() {
@@ -87,9 +87,9 @@ public class Contacto {
 	 * @param provincia
 	 */
 	public Contacto(int id,
-//			@NotEmpty(message = "Introduce un nombre, por favor") @Length(min = 3, message = "Tu nombre debe tener al menos 3 caracteres") String nombre,
+			@NotEmpty(message = "Introduce un nombre, por favor") @Length(min = 3, message = "Tu nombre debe tener al menos 3 caracteres") String nombre,
 			String apellido1, String apellido2, String dni, Date fechanacimiento,
-//			@NotEmpty(message = "Introduce un teléfono, por favor") @Length(min = 9, message = "Tu teléfono debe tener 9 dígitos") int telefono1,
+			@NotEmpty(message = "Introduce un teléfono, por favor") @Length(min = 9, message = "Tu teléfono debe tener 9 dígitos") int telefono1,
 			int telefono2, int telefono3, int telefono4, int telefono5, String direccion, Provincias provincia) {
 		super();
 		this.id = id;
@@ -104,7 +104,7 @@ public class Contacto {
 		this.telefono4 = telefono4;
 		this.telefono5 = telefono5;
 		this.direccion = direccion;
-//		this.provincia = provincia;
+		this.provincia = provincia;
 	}
 
 	/**
