@@ -1,76 +1,63 @@
+
+package com.lafilabuena.model;
 /**
 * Contacto Class
 * 
 * @author Victor Orts
-* @version 2.0
+* @version 2.0 05/12/2018
 */
-
-package com.lafilabuena.model;
-
-
-import com.lafilabuena.model.Provincias;
 
 import java.sql.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
 import org.hibernate.validator.constraints.Length;
+
 @Entity
-@Table(name="persona")
+@Table(name = "persona")
 
 public class Contacto {
 	@Id
-	@GeneratedValue(strategy= GenerationType.AUTO)
-	@Column(name="idpersona")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "idpersona")
 	private int id;
-	@Column(name="nombre")
-	@NotEmpty(message="Introduce un nombre, por favor")
-	@Length(min=3, message="Tu nombre debe tener al menos 3 caracteres")
+	@Column(name = "nombre")
+	@NotEmpty(message = "Introduce un nombre, por favor")
+	@Length(min = 3, message = "Tu nombre debe tener al menos 3 caracteres")
 	private String nombre;
-	@Column(name="apellido1")
+	@Column(name = "apellido1")
 	private String apellido1;
-	@Column(name="apellido2")
+	@Column(name = "apellido2")
 	private String apellido2;
-	@Column(name="dni")
+	@Column(name = "dni")
 	private String dni;
-	@Column(name="fechanacimiento")
+	@Column(name = "fechanacimiento")
 	private Date fechanacimiento;
-	@Column(name="telefono1")
-	//@NotEmpty(message="Introduce un teléfono, por favor")
-	//@Length(min=9, message="Tu teléfono debe tener 9 dígitos")
+	@Column(name = "telefono1")
+	// @NotEmpty(message="Introduce un teléfono, por favor")
+	// @Length(min=9, message="Tu teléfono debe tener 9 dígitos")
 	private int telefono1;
-	@Column(name="telefono2")
+	@Column(name = "telefono2")
 	private int telefono2;
-	@Column(name="telefono3")
+	@Column(name = "telefono3")
 	private int telefono3;
-	@Column(name="telefono4")
+	@Column(name = "telefono4")
 	private int telefono4;
-	@Column(name="telefono5")
+	@Column(name = "telefono5")
 	private int telefono5;
-	@Column(name="direccion")
+	@Column(name = "direccion")
 	private String direccion;
-	
+	@Column(name = "provinciacontacto")
+	private int provinciacontacto;
 
-	
-	
-	@Column(name="provincia")
-	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name="personas_provincias", joinColumns=@JoinColumn(name="idprovincia",referencedColumnName="idprovincia"),
-	   inverseJoinColumns=@JoinColumn(name="idpersona",referencedColumnName="idpersona"))
-	private Provincias provincia;
-	
 	public Contacto() {
-		
+
 	}
 
 	/**
@@ -92,7 +79,7 @@ public class Contacto {
 			@NotEmpty(message = "Introduce un nombre, por favor") @Length(min = 3, message = "Tu nombre debe tener al menos 3 caracteres") String nombre,
 			String apellido1, String apellido2, String dni, Date fechanacimiento,
 			@NotEmpty(message = "Introduce un teléfono, por favor") @Length(min = 9, message = "Tu teléfono debe tener 9 dígitos") int telefono1,
-			int telefono2, int telefono3, int telefono4, int telefono5, String direccion, Provincias provincia) {
+			int telefono2, int telefono3, int telefono4, int telefono5, String direccion) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
@@ -106,14 +93,13 @@ public class Contacto {
 		this.telefono4 = telefono4;
 		this.telefono5 = telefono5;
 		this.direccion = direccion;
-		this.provincia = provincia;
 	}
 
 	/**
 	 * @return the id
 	 */
 	@Id
-	@GeneratedValue(strategy= GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	public int getId() {
 		return id;
 	}
@@ -272,6 +258,14 @@ public class Contacto {
 		return direccion;
 	}
 
+	public int getProvinciacontacto() {
+		return provinciacontacto;
+	}
+
+	public void setProvinciacontacto(int provinciacontacto) {
+		this.provinciacontacto = provinciacontacto;
+	}
+
 	/**
 	 * @param direccion the direccion to set
 	 */
@@ -279,15 +273,9 @@ public class Contacto {
 		this.direccion = direccion;
 	}
 
-	public Provincias getProvincia() {
-		return provincia;
-	}
-
-	public void setProvincia(Provincias provincia) {
-		this.provincia = provincia;
-	}
-
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -317,13 +305,8 @@ public class Contacto {
 		builder.append(telefono5);
 		builder.append(", direccion=");
 		builder.append(direccion);
-		builder.append(", provincia=");
 		builder.append("]");
 		return builder.toString();
 	}
-	
-	
-	
-	
-	
+
 }

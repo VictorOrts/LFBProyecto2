@@ -1,5 +1,12 @@
 package com.lafilabuena.model;
 
+/**
+ * Clase Provincias
+ * 
+ * @author Jorge A Avilés Menéndez
+ * @version 1.0 11/12/2018
+ *
+ */
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,26 +14,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-/**Clase Provincias
- * 
- * @author Jorge A Avilés Menéndez
- *
- */
-
-
 @Entity
-@Table(name="provincia")
+@Table(name = "provincia")
 public class Provincias {
 
 	@Id
-	@GeneratedValue(strategy= GenerationType.AUTO)
-	@Column(name="idprovincia")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "idprovincia")
 	private int idprovincia;
-	@Column(name="provincia")
+	@Column(name = "provincia")
 	private String provincia;
-	
+
 	public Provincias() {
-		
+
 	}
 
 	/**
@@ -43,7 +43,7 @@ public class Provincias {
 	 * @return the id
 	 */
 	@Id
-	@GeneratedValue(strategy= GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	public int getIdprovincia() {
 		return idprovincia;
 	}
@@ -59,8 +59,6 @@ public class Provincias {
 		return provincia;
 	}
 
-
-
 	/**
 	 * @param provincia the provincia to set
 	 */
@@ -68,7 +66,9 @@ public class Provincias {
 		this.provincia = provincia;
 	}
 
-	/* (non-Javadoc)
+	/*
+	 * (non-Javadoc)
+	 * 
 	 * @see java.lang.Object#toString()
 	 */
 	@Override
@@ -81,8 +81,5 @@ public class Provincias {
 		builder.append("]");
 		return builder.toString();
 	}
-	
-	
-	
-	
+
 }

@@ -1,5 +1,10 @@
 package com.lafilabuena.controller;
 
+/**
+ * Clase controller para la gestion de Agenda
+ * @author Jose M. Vicente
+ * @version 1.0  10/12/2018
+ */
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -7,21 +12,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.ModelAndViewDefiningException;
 
 import com.lafilabuena.dao.ProvinciasRepository;
 import com.lafilabuena.model.Contacto;
 
 import com.lafilabuena.services.ContactosServicesImpl;
-import com.lafilabuena.services.ProvinciasServicesImpl;
-
-/*
- * 
- * @author Jose M. Vicente
- */
 
 @Controller("contactosController")
 
@@ -37,7 +34,7 @@ public class ContactosController {
 //	@Autowired
 //	@Qualifier("provinciasServices")
 //	public ProvinciasServicesImpl provinciasService;
-	
+
 //	public ModelAndView listarProvincias() {
 //		ModelAndView mv= new ModelAndView();
 //		return mv.add)
@@ -51,37 +48,35 @@ public class ContactosController {
 	@GetMapping("/")
 	public ModelAndView listarContactos() {
 		ModelAndView mv = new ModelAndView("view1");
-		
+		mv.addObject("provincias", provinciasrepo.findAll());
 		return mv.addObject("contactos", contactServices.listar());
 
 	}
 
 	@GetMapping("/mostrarFicha")
-	public String fichaDetallada(@RequestParam(name="id") int id, Model model) {
-		
+	public String fichaDetallada(@RequestParam(name = "id") int id, Model model) {
+
 		Contacto contacto = new Contacto();
-		
+
 		contacto = contactServices.buscarPorId(id);
-		
+
 		model.addAttribute("contacto", contacto);
+		model.addAttribute("provincias", provinciasrepo.findAll());
 		return "FichaDetallada";
-		
+
 	}
-	
+
 	@PostMapping("/crearusuario")
 	public String crearUsuario(@ModelAttribute(name = "contacto1") Contacto contacto, Model model) {
 		contactServices.crear(contacto);
-		
+
 		return "redirect:/";
 
 	}
 
-
 	@GetMapping("/addContacto")
 	private String redirectContactForm1(@RequestParam(name = "id") int id, Model model) {
 		Contacto contacto1 = new Contacto();
-		ProvinciasServicesImpl p1=new ProvinciasServicesImpl();
-		
 		if (id != 0) {
 			contacto1 = contactServices.buscarPorId(id);
 		}
@@ -96,6 +91,5 @@ public class ContactosController {
 		contactServices.borrar(id);
 		return listarContactos();
 	}
-
 
 }

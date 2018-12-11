@@ -1,24 +1,17 @@
 package com.lafilabuena.dao;
 
-import java.io.Serializable;
-
-
+/**
+ * Método crear Contacto
+ * 
+ * @author Jorge A Avilés Menéndez
+ * @version 1.0 10/12/2018 
+ */
 import org.springframework.stereotype.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.lafilabuena.model.Contacto;
 import com.lafilabuena.model.Provincias;
 
-
-
-
-/**Método crear Contacto
- * 
- * @author Jorge A Avilés Menéndez
- *
- */
 @Repository("provinciasRepository")
-public interface ProvinciasRepository extends JpaRepository<Provincias,Integer>{
-
+public interface ProvinciasRepository extends JpaRepository<Provincias, Integer> {
 
 }

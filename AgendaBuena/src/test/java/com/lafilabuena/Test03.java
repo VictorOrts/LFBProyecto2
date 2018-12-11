@@ -5,7 +5,6 @@ package com.lafilabuena;
  */
 
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
 
 
 

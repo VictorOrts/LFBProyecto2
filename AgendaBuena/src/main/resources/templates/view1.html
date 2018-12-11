@@ -8,6 +8,8 @@
 </head>
 
 <body>
+<div class="container text-center">
+
     <h1>Agenda by lafilabuena</h1>
     <table class="table">
         <thead class="thead-dark">
@@ -27,7 +29,7 @@
                 <td data-th-text="${contacto.apellido1}"></td>
                 <td data-th-text="${contacto.apellido2}"></td>
                 <td data-th-text="${contacto.dni}"></td>
-                 <td data-th-text="${contacto.provinciacontacto}"></td>
+                 <td data-th-text="${provincias[contacto.provinciacontacto].provincia}"></td>
                 <td>
                     <a th:href="@{/addContacto?id=__${contacto.id}__}">
                         <button type="button" class="btn btn-primary">Editar</button>
@@ -50,10 +52,10 @@
     </table>
     <a th:href="@{/addContacto?id=0}">
         <button type="button" class="btn btn-primary">
-            Añadir
+            Añadir Contacto
         </button>
     </a>
-
+</div>
 
 
 

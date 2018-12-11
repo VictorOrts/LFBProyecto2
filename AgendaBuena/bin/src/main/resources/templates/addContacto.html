@@ -15,7 +15,7 @@
     <div class="container">
         <h1>Añadir Usuario</h1>
         <!--        <form th:attr="*{/contacto}"> -->
-        <form th:action="@{crearusuario}" th:object="${contacto1}" method="post">
+        <form name="agent_id" th:action="@{crearusuario}" th:object="${contacto1}" method="post">
             <input type="hidden" th:field="*{id}">
             <br>
             <div class="form-group">
@@ -24,23 +24,35 @@
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput">Primer Apellido</label>
-                <input type="text" class="form-control" th:field="*{apellido1}">
+                <input type="text" class="form-control" th:field="*{apellido1} " th:value="${apellido1}">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput">Segundo Apellido</label>
-                <input type="text" class="form-control" th:field="*{apellido2}">
+                <input type="text" class="form-control" th:field="*{apellido2}" th:value="${apellido2}">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput">DNI</label>
-                <input type="text" class="form-control" th:field="*{dni}">
+                <input type="text" class="form-control" th:field="*{dni}" th:value="*{dni}">
+                <label for="formGroupExampleInput">Fecha de Nacimiento</label>
+                <input type="date" th:field="*{fechanacimiento}" th:value="*{fechanacimiento}">
             </div>
-               <div class="form-group">
-            <select class="custom-select">
-                <option selected>PROVINCIA</option>
-                <option value="1">Barcelona</option>
-                <option value="2">Madrid</option>
-                <option value="3">Valencia</option>
-            </select>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Telefonos</label>
+                <input type="number" min="0" step="1" class="form-control" th:field="*{telefono1}" th:value="*{telefono1}">
+                <input type="number" min="0" step="1" class="form-control" th:field="*{telefono2}" th:value="*{telefono2}">
+                <input type="number" min="0" step="1" class="form-control" th:field="*{telefono3}" th:value="*{telefono3}">
+                <input type="number" min="0" step="1" class="form-control" th:field="*{telefono4}" th:value="*{telefono4}">
+            </div>
+             <div class="form-group">
+                <label for="formGroupExampleInput">Direccion</label>
+                <input type="text" class="form-control" th:field="*{direccion}" th:value="*{direccion}">
+             <select th:field="*{provinciacontacto}" >
+              
+                <option th:each="provincia : ${provincias}" th:value="${provincia.provincia}" th:text="${provincia.provincia}"
+                  
+                />
+            </select>        
+
             </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit">
                 <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
