@@ -33,6 +33,8 @@
             <div class="form-group">
                 <label for="formGroupExampleInput">DNI</label>
                 <input type="text" class="form-control" th:field="*{dni}" th:value="*{dni}">
+                <label for="formGroupExampleInput">Fecha de Nacimiento</label>
+                <input type="date" th:field="*{fechanacimiento}" th:value="*{fechanacimiento}">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput">Telefonos</label>
@@ -44,8 +46,8 @@
              <div class="form-group">
                 <label for="formGroupExampleInput">Direccion</label>
                 <input type="text" class="form-control" th:field="*{direccion}" th:value="*{direccion}">
-             <select th:field="*idpronvincia">
-                <option th:each="provincia : ${provincias}" th:value="${provincia.idprovincia}" th:text="${provincia.provincia}"></option>
+             <select>
+                <option th:each="provincia : ${provincias}" th:value="${provincia.idprovincia}" th:text="${provincia.provincia}" th:field="*{provincia.idprovincia}"></option>
             </select>        
 
             </div>
