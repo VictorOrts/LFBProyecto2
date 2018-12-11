@@ -15,7 +15,7 @@
     <div class="container">
         <h1>Añadir Usuario</h1>
         <!--        <form th:attr="*{/contacto}"> -->
-        <form th:action="@{crearusuario}" th:object="${contacto1}" method="post">
+        <form name="agent_id" th:action="@{crearusuario}" th:object="${contacto1}" method="post">
             <input type="hidden" th:field="*{id}">
             <br>
             <div class="form-group">
@@ -44,8 +44,11 @@
              <div class="form-group">
                 <label for="formGroupExampleInput">Direccion</label>
                 <input type="text" class="form-control" th:field="*{direccion}" th:value="*{direccion}">
-             <select th:field="*idpronvincia">
-                <option th:each="provincia : ${provincias}" th:value="${provincia.idprovincia}" th:text="${provincia.provincia}"></option>
+             <select th:field="*{provinciacontacto}" >
+              
+                <option th:each="provincia : ${provincias}" th:value="${provincia.provincia}" th:text="${provincia.provincia}"
+                  
+                />
             </select>        
 
             </div>

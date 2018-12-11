@@ -17,6 +17,7 @@
                 <th>Primero Apellido</th>
                 <th>Segundo Apellido</th>
                 <th>DNI</th>
+                <th>Provincia</th>
             </tr>
         </thead>
         <tbody>
@@ -26,6 +27,7 @@
                 <td data-th-text="${contacto.apellido1}"></td>
                 <td data-th-text="${contacto.apellido2}"></td>
                 <td data-th-text="${contacto.dni}"></td>
+                 <td data-th-text="${contacto.provinciacontacto}"></td>
                 <td>
                     <a th:href="@{/addContacto?id=__${contacto.id}__}">
                         <button type="button" class="btn btn-primary">Editar</button>
