@@ -24,15 +24,22 @@
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput">Primer Apellido</label>
-                <input type="text" class="form-control" th:field="*{apellido1}">
+                <input type="text" class="form-control" th:field="*{apellido1} " th:value="${apellido1}">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput">Segundo Apellido</label>
-                <input type="text" class="form-control" th:field="*{apellido2}">
+                <input type="text" class="form-control" th:field="*{apellido2}" th:value="${apellido2}">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput">DNI</label>
-                <input type="text" class="form-control" th:field="*{dni}">
+                <input type="text" class="form-control" th:field="*{dni}" th:value="*{dni}">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Telefonos</label>
+                <input type="number" min="0" step="1" class="form-control" th:field="*{telefono1}" th:value="*{telefono1}">
+                <input type="number" min="0" step="1" class="form-control" th:field="*{telefono2}" th:value="*{telefono2}">
+                <input type="number" min="0" step="1" class="form-control" th:field="*{telefono3}" th:value="*{telefono3}">
+                <input type="number" min="0" step="1" class="form-control" th:field="*{telefono4}" th:value="*{telefono4}">
             </div>
                <div class="form-group">
             <select class="custom-select">

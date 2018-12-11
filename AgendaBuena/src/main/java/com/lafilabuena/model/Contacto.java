@@ -44,8 +44,8 @@ public class Contacto {
 	@Column(name="fechanacimiento")
 	private Date fechanacimiento;
 	@Column(name="telefono1")
-	@NotEmpty(message="Introduce un teléfono, por favor")
-	@Length(min=9, message="Tu teléfono debe tener 9 dígitos")
+	//@NotEmpty(message="Introduce un teléfono, por favor")
+	//@Length(min=9, message="Tu teléfono debe tener 9 dígitos")
 	private int telefono1;
 	@Column(name="telefono2")
 	private int telefono2;
@@ -63,8 +63,8 @@ public class Contacto {
 	
 	@Column(name="provincia")
 	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name="personas_provincias", joinColumns=@JoinColumn(name="idprovincias",referencedColumnName="idprovincias"),
-	   inverseJoinColumns=@JoinColumn(name="idpersona",referencedColumnName="idpersonas"))
+	@JoinTable(name="personas_provincias", joinColumns=@JoinColumn(name="idprovincia",referencedColumnName="idprovincia"),
+	   inverseJoinColumns=@JoinColumn(name="idpersona",referencedColumnName="idpersona"))
 	private Provincias provincia;
 	
 	public Contacto() {
