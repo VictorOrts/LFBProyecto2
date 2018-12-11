@@ -52,6 +52,7 @@ public class Contacto {
 	private int telefono5;
 	@Column(name="direccion")
 	private String direccion;
+	//@Autowired
 	@Column(name="provincia")
 	private Provincias provincia;
 	
