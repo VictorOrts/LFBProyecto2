@@ -56,24 +56,30 @@ public class ContactosServicesImpl {
 		return contacto;
 	}
 
-	public String buscar(String busca) {
+	public List buscar(String busca) {
 		String query = "SELECT * FROM persona WHERE nombre LIKE % "+busca+";";
 		List<Contacto> busqueda= new ArrayList<>();
 		List<Contacto> contactos =contactoRepository.findAll();
 		for (Contacto tmp : contactos) {
-			
 			if(tmp.getNombre().equals(busca)) {
 				busqueda.add(tmp);
 			}else {
 				//contactos.remove(tmp.getId());
-			}
+			}	
+		}
+		
+		if(busqueda==null || busqueda.size()==0) {
+			System.out.println("No existen contactos con ese nombre");
+			System.out.println("Estos son los contactos creados: ");
+			return contactos;
+		}else {
+			System.out.println("Los contactos encontrados son: ");
+			return busqueda;
 			
 		}
 		
-		System.out.println("Los contactos encontrados son: "+busqueda);
 		
-		//falta comprobar si no existiese ese contacto
-		return "No existen contactos con ese nombre";
+		
 	}
 
 
