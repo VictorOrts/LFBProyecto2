@@ -33,8 +33,10 @@ public class ContactosServicesImpl {
 	private ContactoRepository contactoRepository;
 	
 	public Contacto buscarPorId(int id) {
-		
-		return contactoRepository.findById(id);
+		Contacto c1 = contactoRepository.findById(id)
+				.orElse(new Contacto());
+
+		return c1;
 	}
 	
 

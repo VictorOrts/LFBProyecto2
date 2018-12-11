@@ -17,7 +17,7 @@ import com.lafilabuena.model.Contacto;
  *
  */
 @Repository
-public interface ContactoRepository extends JpaRepository<Contacto,Serializable>{
+public interface ContactoRepository extends JpaRepository<Contacto,Integer>{
 
 
 }
