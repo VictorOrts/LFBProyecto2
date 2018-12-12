@@ -1,5 +1,8 @@
 package com.lafilabuena.dao;
 
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
 /**
  * Método crear Contacto
  * 
@@ -7,12 +10,11 @@ package com.lafilabuena.dao;
  * @version 1.0 9/12/2018
  *
  */
-import org.springframework.stereotype.Repository;
-import org.springframework.data.jpa.repository.JpaRepository;
+
 
 import com.lafilabuena.model.Contacto;
 
 @Repository
-public interface ContactoRepository extends JpaRepository<Contacto, Integer> {
+public interface ContactoRepository extends CrudRepository<Contacto, Integer> {
 
 }

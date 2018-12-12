@@ -51,7 +51,7 @@ public class ContactosServicesImpl {
 
 	public List<Contacto> buscarNombre(String busca) {
 		List<Contacto> busqueda = new ArrayList<>();
-		List<Contacto> contactos = contactoRepository.findAll();
+		List<Contacto> contactos = (List<Contacto>) contactoRepository.findAll();
 
 		for (Contacto tmp : contactos) {
 			if (tmp.getNombre().equals(busca)) {
@@ -79,7 +79,7 @@ public class ContactosServicesImpl {
 	public List<Contacto> listar() {
 		// buscarNombre("Victor");
 		LOGGER.log(Level.INFO, "----Imprimiendo la lista");
-		return contactoRepository.findAll();
+		return (List<Contacto>) contactoRepository.findAll();
 	}
 
 }
