@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Agenda</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container text-center">
+
+    <h1>Agenda by lafilabuena</h1>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Primero Apellido</th>
+                <th>Segundo Apellido</th>
+                <th>DNI</th>
+                <th>Provincia</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="direccion : ${direcciones}">
+                <td data-th-text="${direccion.iddireccion}"> </td>
+                <td data-th-text="${direccion.direccion}"></td>
+                <td data-th-text="${direccion.codpostal}"></td>
+                <td data-th-text="${contactos[direccion.idpersona].nombre}"></td>
+                <td data-th-text="${provincias[direccion.idprovincia].provincia}"></td>
+<!--                  <td data-th-text="${provincias[contacto.provinciacontacto].provincia}"></td> -->
+            </tr>
+
+    </tbody>
+    </table>
+        <a th:href="@{/addContacto?id=0}">
+        <button type="button" class="btn btn-primary">
+            Añadir Contacto
+        </button>
+    </a>
+</div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+
+</html>

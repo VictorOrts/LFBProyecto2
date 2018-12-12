@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.lafilabuena.dao.DireccionRepository;
 import com.lafilabuena.dao.ProvinciasRepository;
 import com.lafilabuena.model.Contacto;
 
@@ -31,6 +32,9 @@ public class ContactosController {
 	@Autowired
 	@Qualifier("provinciasRepository")
 	public ProvinciasRepository provinciasrepo;
+	@Autowired
+	@Qualifier("direccionRepository")
+	public DireccionRepository direccionRepo;
 //	@Autowired
 //	@Qualifier("provinciasServices")
 //	public ProvinciasServicesImpl provinciasService;
@@ -47,10 +51,10 @@ public class ContactosController {
 
 	@GetMapping("/")
 	public ModelAndView listarContactos() {
-		ModelAndView mv = new ModelAndView("view1");
+		ModelAndView mv = new ModelAndView("ListaView");
 		mv.addObject("provincias", provinciasrepo.findAll());
+		mv.addObject("direcciones", direccionRepo.findAll());
 		return mv.addObject("contactos", contactServices.listar());
-
 	}
 
 	@GetMapping("/mostrarFicha")
