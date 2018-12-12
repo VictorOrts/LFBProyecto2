@@ -2,64 +2,60 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<title>Document</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+	integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+	crossorigin="anonymous"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+	integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+	crossorigin="anonymous"></script>
 </head>
 
 <body>
 
-    <div class="container">
-        <h1>Añadir Usuario</h1>
-        <!--        <form th:attr="*{/contacto}"> -->
-        <form name="agent_id" th:action="@{crearusuario}" th:object="${contacto1}" method="post">
-            <input type="hidden" th:field="*{id}">
-            <br>
-            <div class="form-group">
-                <label for="formGroupExampleInput">Nombre</label>
-                <input type="text" class="form-control" th:field="*{nombre}" th:value="${name}">
-            </div>
-            <div class="form-group">
-                <label for="formGroupExampleInput">Primer Apellido</label>
-                <input type="text" class="form-control" th:field="*{apellido1} " th:value="${apellido1}">
-            </div>
-            <div class="form-group">
-                <label for="formGroupExampleInput">Segundo Apellido</label>
-                <input type="text" class="form-control" th:field="*{apellido2}" th:value="${apellido2}">
-            </div>
-            <div class="form-group">
-                <label for="formGroupExampleInput">DNI</label>
-                <input type="text" class="form-control" th:field="*{dni}" th:value="*{dni}">
-                <label for="formGroupExampleInput">Fecha de Nacimiento</label>
-                <input type="date" th:field="*{fechanacimiento}" th:value="*{fechanacimiento}">
-            </div>
-            <div class="form-group">
-                <label for="formGroupExampleInput">Telefonos</label>
-                <input type="number" min="0" step="1" class="form-control" th:field="*{telefono1}" th:value="*{telefono1}">
-                <input type="number" min="0" step="1" class="form-control" th:field="*{telefono2}" th:value="*{telefono2}">
-                <input type="number" min="0" step="1" class="form-control" th:field="*{telefono3}" th:value="*{telefono3}">
-                <input type="number" min="0" step="1" class="form-control" th:field="*{telefono4}" th:value="*{telefono4}">
-            </div>
-             <div class="form-group">
-                <label for="formGroupExampleInput">Direccion</label>
-                <input type="text" class="form-control" th:field="*{direccion}" th:value="*{direccion}">
-             <select th:field="*{provinciacontacto}" >
-              
-                <option th:each="provincia : ${provincias}" th:value="${provincia.provincia}" th:text="${provincia.provincia}"
-                  
-                />
-            </select>        
-
-            </div>
-            <button class="btn btn-lg btn-primary btn-block" type="submit">
-                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-                Aceptar
-            </button>
-        </form>
-    </div>
+	<div class="container">
+		<h1>Añadir Usuario</h1>
+		<!--        <form th:attr="*{/contacto}"> -->
+		<form name="agent_id" th:action="@{crearusuario}"
+			th:object="${contacto1}" method="post">
+			<input type="hidden" th:field="*{idpersona}"> <br>
+			<div class="form-group">
+				<label for="formGroupExampleInput">Nombre</label> <input type="text"
+					class="form-control" th:field="*{nombre}" th:value="${name}">
+			</div>
+			<div class="form-group">
+				<label for="formGroupExampleInput">Primer Apellido</label> <input
+					type="text" class="form-control" th:field="*{apellido1} "
+					th:value="${apellido1}">
+			</div>
+			<div class="form-group">
+				<label for="formGroupExampleInput">Segundo Apellido</label> <input
+					type="text" class="form-control" th:field="*{apellido2}"
+					th:value="${apellido2}">
+			</div>
+			<div class="form-group">
+				<label for="formGroupExampleInput">DNI</label> <input type="text"
+					class="form-control" th:field="*{dni}" th:value="*{dni}"> 
+					<label for="formGroupExampleInput">Fecha de Nacimiento</label> <input
+					type="date" th:field="*{fechanacimiento}"
+					th:value="*{fechanacimiento}">
+			</div>
+			<button class="btn btn-lg btn-primary btn-block" type="submit">
+				<span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+				Aceptar
+			</button>
+		</form>
+	</div>
 
 </body>
 

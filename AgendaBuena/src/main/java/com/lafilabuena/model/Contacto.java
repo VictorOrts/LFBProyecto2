@@ -47,9 +47,6 @@ public class Contacto {
 	private String dni;
 	@Column(name = "fechanacimiento")
 	private Date fechanacimiento;
-	@OneToMany(cascade = { CascadeType.ALL },orphanRemoval=true)
-	@JoinColumn(name = "iddireccion", referencedColumnName = "iddireccion", nullable=false)
-	private List<Direccion> direcciones;
 	public Contacto() {
 
 	}
@@ -118,20 +115,6 @@ public class Contacto {
 		this.fechanacimiento = fechanacimiento;
 	}
 
-
-
-	public List<Direccion> getDirecciones() {
-		return direcciones;
-	}
-
-
-
-	public void setDirecciones(List<Direccion> direcciones) {
-		this.direcciones = direcciones;
-	}
-
-
-
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -147,8 +130,6 @@ public class Contacto {
 		builder.append(dni);
 		builder.append(", fechanacimiento=");
 		builder.append(fechanacimiento);
-		builder.append(", direcciones=");
-		builder.append(direcciones);
 		builder.append("]");
 		return builder.toString();
 	}

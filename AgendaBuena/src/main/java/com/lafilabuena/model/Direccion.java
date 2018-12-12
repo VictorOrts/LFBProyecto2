@@ -1,16 +1,11 @@
 package com.lafilabuena.model;
 
-import javax.persistence.CascadeType;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
@@ -27,13 +22,10 @@ public class Direccion {
 	private int codpostal;
 	@Column(name = "localidad")
 	private String localidad;
-    
-    @ManyToOne
-    @JoinColumn(name = "idprovincia", referencedColumnName = "idprovincia")
-	private Provincias provincia;
-    @OneToMany
-    public Contacto persona;
-	
+	@Column(name = "idpersona")
+    private int idpersona;
+	@Column(name = "idprovincia")
+    private int idprovincia;
 	public Direccion() {
 		
 	}
@@ -70,43 +62,23 @@ public class Direccion {
 	public void setLocalidad(String localidad) {
 		this.localidad = localidad;
 	}
-	public Provincias getProvincia() {
-		return provincia;
+	public int getIdpersona() {
+		return idpersona;
 	}
-	public void setProvincia(Provincias provincia) {
-		this.provincia = provincia;
+	public void setIdpersona(int idpersona) {
+		this.idpersona = idpersona;
 	}
-	public Contacto getPersona() {
-		return persona;
+	public int getIdprovincia() {
+		return idprovincia;
 	}
-	public void setPersona(Contacto persona) {
-		this.persona = persona;
+	public void setIdprovincia(int idprovincia) {
+		this.idprovincia = idprovincia;
 	}
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Direccion [iddireccion=");
-		builder.append(iddireccion);
-		builder.append(", direccion=");
-		builder.append(direccion);
-		builder.append(", codpostal=");
-		builder.append(codpostal);
-		builder.append(", localidad=");
-		builder.append(localidad);
-		builder.append(", provincia=");
-		builder.append(provincia);
-		builder.append(", persona=");
-		builder.append(persona);
-		builder.append("]");
-		return builder.toString();
+		return "Direccion [iddireccion=" + iddireccion + ", direccion=" + direccion + ", codpostal=" + codpostal
+				+ ", localidad=" + localidad + ", idpersona=" + idpersona + ", idprovincia=" + idprovincia + "]";
 	}
-
-	
-
-
-
-
-
 
 	
 }

@@ -8,6 +8,8 @@
 </head>
 
 <body>
+<div class="container text-center">
+
     <h1>Agenda by lafilabuena</h1>
     <table class="table">
         <thead class="thead-dark">
@@ -22,25 +24,25 @@
         </thead>
         <tbody>
             <tr th:each="contacto : ${contactos}">
-                <td data-th-text="${contacto.id}"> </td>
+                <td data-th-text="${contacto.idpersona}"> </td>
                 <td data-th-text="${contacto.nombre}"></td>
                 <td data-th-text="${contacto.apellido1}"></td>
                 <td data-th-text="${contacto.apellido2}"></td>
                 <td data-th-text="${contacto.dni}"></td>
-                 <td data-th-text="${contacto.provinciacontacto}"></td>
+<!--                  <td data-th-text="${provincias[contacto.provinciacontacto].provincia}"></td> -->
                 <td>
-                    <a th:href="@{/addContacto?id=__${contacto.id}__}">
+                    <a th:href="@{/addContacto?id=__${contacto.idpersona}__}">
                         <button type="button" class="btn btn-primary">Editar</button>
                     </a>
                 </td>
                 <td>
-                    <a href:"#" th:href="@{/borrar?id=__${contacto.id}__}">
+                    <a href:"#" th:href="@{/borrar?id=__${contacto.idpersona}__}">
                         <button type="button" class="btn btn-primary" > Borrar
 	                     </button>
                     </a>
                 </td>
       <td>
-      <a href:"#" th:href="@{/mostrarFicha?id=__${contacto.id}__}">
+      <a href:"#" th:href="@{/mostrarFicha?id=__${contacto.idpersona}__}">
        <button type="button" class="btn btn-primary">Detalles</button>
         </a>
                 </td>
@@ -50,10 +52,10 @@
     </table>
     <a th:href="@{/addContacto?id=0}">
         <button type="button" class="btn btn-primary">
-            Añadir
+            Añadir Contacto
         </button>
     </a>
-
+</div>
 
 
 
