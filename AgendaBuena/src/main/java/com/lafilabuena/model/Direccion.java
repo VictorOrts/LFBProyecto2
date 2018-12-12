@@ -1,5 +1,6 @@
 package com.lafilabuena.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -7,7 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -19,15 +21,18 @@ public class Direccion {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "iddireccion")
 	private int iddireccion;
+	@Column(name = "direccion")
 	private String direccion;
+	@Column(name = "codpostal")
 	private int codpostal;
+	@Column(name = "localidad")
 	private String localidad;
-    @OneToOne
-    @JoinColumn(name = "idprovincia",referencedColumnName="idprovincia")
+    
+    @ManyToOne
+    @JoinColumn(name = "idprovincia", referencedColumnName = "idprovincia")
 	private Provincias provincia;
-    @OneToOne
-    @JoinColumn(name = "idpersona",referencedColumnName="idpersona")
-	private Contacto persona;
+    @OneToMany
+    public Contacto persona;
 	
 	public Direccion() {
 		
