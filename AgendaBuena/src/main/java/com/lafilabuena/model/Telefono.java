@@ -26,7 +26,7 @@ public class Telefono {
 	@Column(name = "idtelefono")
 	private int idtelefono;
 	@Column(name= "telefono")
-	private int telefono;
+	private String telefono;
 	@Column(name= "idpersona")
 	private int idpersona;
 	
@@ -35,7 +35,7 @@ public class Telefono {
 		
 	}
 	
-	public Telefono(int idtelefono, int telefono, int idpersona) {
+	public Telefono(int idtelefono, String telefono, int idpersona) {
 		super();
 		this.idtelefono=idtelefono;
 		this.telefono=telefono;
@@ -54,12 +54,12 @@ public class Telefono {
 	}
 
 
-	public int getTelefono() {
+	public String getTelefono() {
 		return telefono;
 	}
 
 
-	public void setTelefono(int telefono) {
+	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
 
