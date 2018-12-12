@@ -11,9 +11,12 @@ import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumns;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
 
@@ -40,24 +43,11 @@ public class Contacto {
 	@Column(name = "fechanacimiento")
 	private Date fechanacimiento;
 
-
 	public Contacto() {
 
 	}
 
 	
-
-	public Contacto(int id,
-			@NotEmpty(message = "Introduce un nombre, por favor") @Length(min = 3, message = "Tu nombre debe tener al menos 3 caracteres") String nombre,
-			String apellido1, String apellido2, String dni, Date fechanacimiento) {
-		super();
-		this.idpersona = id;
-		this.nombre = nombre;
-		this.apellido1 = apellido1;
-		this.apellido2 = apellido2;
-		this.dni = dni;
-		this.fechanacimiento = fechanacimiento;
-	}
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -122,10 +112,11 @@ public class Contacto {
 	}
 
 
+
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Contacto [id=");
+		builder.append("Contacto [idpersona=");
 		builder.append(idpersona);
 		builder.append(", nombre=");
 		builder.append(nombre);
@@ -140,7 +131,8 @@ public class Contacto {
 		builder.append("]");
 		return builder.toString();
 	}
-	
+
+
 	
 
 }
