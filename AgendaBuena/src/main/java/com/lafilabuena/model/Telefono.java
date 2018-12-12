@@ -1,3 +1,12 @@
+/**
+ * Clase telefono
+ * 
+ * @author Mario Alcañiz
+ * fecha: 12/12/18
+ * version 1.0
+ *
+ */
+
 package com.lafilabuena.model;
 
 import javax.persistence.Column;
