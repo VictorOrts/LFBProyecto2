@@ -36,8 +36,12 @@ public class ContactosServicesImpl {
 		return contactoRepository.save(contacto);
 	}
 
-	public void borrar(int id) {
-		contactoRepository.deleteById(id);
+	public Contacto borrar(int id) {
+		Contacto contacto=buscarPorId(id);
+		if(contacto!=null) {
+			contactoRepository.delete(contacto);
+		}
+		return contacto;
 	}
 
 	public Contacto editar(Contacto contacto) {
