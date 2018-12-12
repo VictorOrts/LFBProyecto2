@@ -1,5 +1,7 @@
 package com.lafilabuena.controller;
-
+/**Clase ContactController
+ * @author Jorge A Avilés Menéndez
+ */
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
