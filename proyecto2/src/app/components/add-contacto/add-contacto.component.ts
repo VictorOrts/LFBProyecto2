@@ -9,7 +9,7 @@ export class AddContactoComponent {
 
   contacto: Contacto = new Contacto();
 
-  constructor(private ) { }
+  constructor( ) { }
 
   ngOnInit() {
   }
