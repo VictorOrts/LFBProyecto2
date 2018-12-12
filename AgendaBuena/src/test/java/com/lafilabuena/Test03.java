@@ -33,7 +33,7 @@ public class Test03 {
 		c1.setNombre("jorge");
 		c1.setApellido1("Aviles");
 		c1.setApellido2("Menendez");
-		c1.setDireccion("calle alcalde");
+		//c1.setDireccion("calle alcalde");
 		c1.setDni("5848694E");
 		
 		assertNotNull(contactosServices.crear(c1));
