@@ -6,8 +6,10 @@
   <thead class="thead-dark">
     <tr>
       <th>#</th>
-      <th>First Name</th>
-      <th>Last Name</th>
+      <th>Nombre</th>
+      <th>Primer Apellido</th>
+      <th>Segundo Apellido</th>
+      <th>DNI</th>
     </tr>
   </thead>
   <tbody>
@@ -26,14 +28,20 @@
 <table class="table">
     <thead class="thead-dark">
       <tr>
-        <th>#</th>
-        <th>First Name</th>
-        <th>Last Name</th>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Primer Apellido</th>
+        <th>Segundo Apellido</th>
+        <th>DNI</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let contacto of Contactos">
+        <td> {{contacto.idcontacto}} </td>
         <td> {{contacto.nombre}} </td>
+        <td> {{contacto.apellido1}} </td>
+        <td> {{contacto.apellido2}} </td>
+        <td> {{contacto.dni}} </td>
       </tr>
     </tbody>
   </table>

@@ -10,18 +10,12 @@ import {ContactoService} from '../../services/contacto.services';
 })
 export class ListarContactoComponent implements OnInit {
   Contactos : Contacto[];
-  constructor(private router: Router) { 
-    var tmp  = new Contacto();
-    tmp.idcontacto=55;
-    tmp.nombre="Victor";
-    tmp.apellido1="Orts";
-    this.Contactos.push(tmp);
-    this.Contactos.push(tmp);
-    this.Contactos.push(tmp);
+  constructor(private router: Router,private contactoService:ContactoService) { 
   }
 
   ngOnInit() {
-
+      this.contactoService.getUsers().subscribe(data=> {this.Contactos=data});
+      console.log(this.Contactos);
   };
 
 }
