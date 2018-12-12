@@ -1,5 +1,6 @@
 package com.lafilabuena.model;
 
+import javax.persistence.CascadeType;
 /**
  * Clase Provincias
  * 
@@ -25,8 +26,9 @@ public class Provincias {
 	private int idprovincia;
 	@Column(name = "provincia")
 	private String provincia;
-	@OneToMany(mappedBy="provincia")
+	@OneToMany(mappedBy="direccion")
 	private Direccion direccion;
+	
 	public Provincias() {
 
 	}
@@ -48,6 +50,7 @@ public class Provincias {
 	public void setDireccion(Direccion direccion) {
 		this.direccion = direccion;
 	}
+	
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
