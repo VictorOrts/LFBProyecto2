@@ -10,7 +10,7 @@ export class ContactoService {
     constructor(private http: HttpClient) {}
 
     private host = 'http://localhost:8080/contacts';
-    public getUsers(){
+    public getUsers() {
         return this.http.get<Contacto[]>(this.host);
 
     }
@@ -18,9 +18,14 @@ export class ContactoService {
       return this.http.post<Contacto>(this.host, contacto);
     }
 
-    public getUser(){
+    public getUser() {
         return this.http.get<Contacto>(this.host + '/{id}');
     }
 
+    public deleteUser(id) {
+      const borrado = `${this.host}/${id}`;
+     return this.http.delete(borrado);
+
+    }
 }
 

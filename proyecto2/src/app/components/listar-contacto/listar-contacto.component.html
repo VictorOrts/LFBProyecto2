@@ -1,9 +1,12 @@
-<div class="container">
+
+
 <p>
   listar-contacto works!
 
 </p>
-<table class="table">
+<div class="container-fluid">
+  <div class="card">
+    <table class="table">
     <thead class="thead-dark">
       <tr>
         <th>ID</th>
@@ -12,6 +15,9 @@
         <th>Segundo Apellido</th>
         <th>DNI</th>
         <th>Fecha Nacimiento</th>
+        <th></th>
+        <th>Opciones</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -22,8 +28,12 @@
         <td> {{contacto.apellido2}} </td>
         <td> {{contacto.dni}} </td>
         <td> {{contacto.fechanacimiento}} </td>
+        <td><button type="button" class="btn btn-primary">Editar</button></td>
+        <td><a routerLink="/contactos/5"><button type="button" class="btn btn-danger">Borrar</button></a></td>
+        <td><a routerLink="/contactos/1"><button type="button" class="btn btn-dark">Detalles</button></a></td>
       </tr>
     </tbody>
-  </table>
+    </table>
+  </div>
 Esto no actualizaaaaa
 </div>
