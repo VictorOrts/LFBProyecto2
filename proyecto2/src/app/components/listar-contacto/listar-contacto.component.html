@@ -1,39 +1,34 @@
-
-
-<p>
-  listar-contacto works!
-
-</p>
-<div class="container-fluid">
-  <div class="card">
-    <table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>Primer Apellido</th>
-        <th>Segundo Apellido</th>
-        <th>DNI</th>
-        <th>Fecha Nacimiento</th>
-        <th></th>
-        <th>Opciones</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let contacto of Contactos">
-        <td> {{contacto.idcontacto}} </td>
-        <td> {{contacto.nombre}} </td>
-        <td> {{contacto.apellido1}} </td>
-        <td> {{contacto.apellido2}} </td>
-        <td> {{contacto.dni}} </td>
-        <td> {{contacto.fechanacimiento}} </td>
-        <td><button type="button" class="btn btn-primary">Editar</button></td>
-        <td><a routerLink="/contactos/5"><button type="button" class="btn btn-danger">Borrar</button></a></td>
-        <td><a routerLink="/contactos/1"><button type="button" class="btn btn-dark">Detalles</button></a></td>
-      </tr>
-    </tbody>
-    </table>
-  </div>
-Esto no actualizaaaaa
-</div>
+<a routerLink="/contactos/contacto">
+  <button class="btn btn-group-lg">Añadir contacto</button>
+</a>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Primer Apellido</th>
+      <th>Segundo Apellido</th>
+      <th>DNI</th>
+      <th>Fecha Nacimiento</th>
+      <th></th>
+      <th>OPCIONES</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let contacto of Contactos">
+      <td>{{ contacto.idcontacto }}</td>
+      <td>{{ contacto.nombre }}</td>
+      <td>{{ contacto.apellido1 }}</td>
+      <td>{{ contacto.apellido2 }}</td>
+      <td>{{ contacto.dni }}</td>
+      <td>{{ contacto.fechanacimiento }}</td>
+      <td><button type="button" class="btn btn-primary">Editar</button></td>
+      <td><a routerLink="/contactos/5"><button type="button" class="btn btn-danger">Borrar</button></a></td>
+      <td><a routerLink="/contactos/1"><button type="button" class="btn btn-dark">Detalles</button></a></td>
+    </tr>
+  </tbody>
+  <a routerLink="/contactos/contacto">
+    <button class="btn btn-group-lg">Añadir contacto</button>
+  </a>
+</table>

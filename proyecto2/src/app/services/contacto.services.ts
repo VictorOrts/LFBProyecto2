@@ -9,12 +9,12 @@ const httpOptions = {headers: new HttpHeaders({'Content-Type': 'application/json
 export class ContactoService {
     constructor(private http: HttpClient) {}
 
-    private host = 'http://localhost:8080/contacts';
-    public getUsers() {
+    private host = 'http://localhost:8080/contactos';
+    public getUsers(){
         return this.http.get<Contacto[]>(this.host);
 
     }
-    public createUSer(contacto) {
+    public createUser(contacto) {
       return this.http.post<Contacto>(this.host, contacto);
     }
 
