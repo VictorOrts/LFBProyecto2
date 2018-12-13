@@ -12,7 +12,7 @@ import { HttpParams } from '@angular/common/http';
 })
 export class FichaDetalladaComponent implements OnInit {
   contacto : Contacto;
-  id : string
+  id : string;
   sub: Subscription;
 
   constructor( private route: ActivatedRoute ,private router: Router,private contactoService:ContactoService ) {

@@ -1,7 +1,5 @@
 <div class="container">
 <p>
-  listar-contacto works!
-
 </p>
 <table class="table">
     <thead class="thead-dark">
@@ -10,10 +8,8 @@
         <th>Nombre</th>
         <th>Primer Apellido</th>
         <th>Segundo Apellido</th>
-        <th>DNI</th>
-        <th>Fecha Nacimiento</th>
         <th></th>
-        <th></th>
+        <th>Opciones</th>
         <th></th>
       </tr>
     </thead>
@@ -23,21 +19,21 @@
         <td> {{contacto.nombre}} </td>
         <td> {{contacto.apellido1}} </td>
         <td> {{contacto.apellido2}} </td>
-        <td> {{contacto.dni}} </td>
-        <td> {{contacto.fechanacimiento}} </td>
-        <td> <button
-          (click)="deleteContacto(contacto)">
-          eliminar
+        <td> <button class="btn btn-success">
+          Editar
         </button></td>
-        <td> <a routerLink="ficha/{{contacto.idpersona}}"><button onclick="listaDetallada(contacto)">
-          fichadetallada
+        <td> <button class="btn btn-danger"
+          (click)="deleteContacto(contacto)">
+          Eliminar
+        </button></td>
+        <td> <a routerLink="ficha/{{contacto.idpersona}}"><button class="btn btn-info"onclick="listaDetallada(contacto)">
+          Fichadetallada
         </button></a></td>
 
       </tr>
     </tbody>
   </table>
   <a routerLink="/contactos/contacto">
-    <button type="button" class="btn btn-primary">Primary</button>
+    <button type="button" class="btn btn-primary">Añadir contacto</button>
   </a>
-Esto no actualizaaaaa
 </div>
