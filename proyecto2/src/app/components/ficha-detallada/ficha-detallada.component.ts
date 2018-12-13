@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input} from '@angular/core';
 import { Contacto } from 'src/app/model/contacto.model';
-import { Router } from '@angular/router';
+import { ActivatedRoute,Router } from '@angular/router';
 import { ContactoService } from 'src/app/services/contacto.services';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -10,15 +11,22 @@ import { ContactoService } from 'src/app/services/contacto.services';
   styleUrls: ['./ficha-detallada.component.css']
 })
 export class FichaDetalladaComponent implements OnInit {
-  contacto: Contacto;
-  constructor( private router: Router,private contactoService:ContactoService ) {
+  contacto : Contacto;
+ 
+ 
+ 
+  constructor( private route: ActivatedRoute ,private router: Router,private contactoService:ContactoService ) {
+
+ 
 
   }
 
  
   ngOnInit() {
-    this.contactoService.getUser().subscribe(data=> {this.contacto=data});
-    console.log(this.contacto);
+   
+     
+  this.contactoService.getUser('6').subscribe(data=>{this.contacto=data});
+   
   };
 
 }
