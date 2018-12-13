@@ -16,8 +16,8 @@ constructor(private router: Router, private contactoService: ContactoService){
 createContacto (): void {
   this.contactoService.createUser(this.contacto)
   .subscribe(data => {
-    alert('user created');
-
+    alert('¡USUARIO AÑADIRDO CORRECTAMENTE!');
+    this.router.navigate(['/contactos']);
   });
 }
 

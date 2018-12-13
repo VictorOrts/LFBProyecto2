@@ -1,29 +1,28 @@
-<div class="container">
-<p>
-  listar-contacto works!
-
-</p>
+<a routerLink="/contactos/contacto">
+  <button class="btn btn-group-lg">Añadir contacto</button>
+</a>
 <table class="table">
-    <thead class="thead-dark">
-      <tr>
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>Primer Apellido</th>
-        <th>Segundo Apellido</th>
-        <th>DNI</th>
-        <th>Fecha Nacimiento</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let contacto of Contactos">
-        <td> {{contacto.idcontacto}} </td>
-        <td> {{contacto.nombre}} </td>
-        <td> {{contacto.apellido1}} </td>
-        <td> {{contacto.apellido2}} </td>
-        <td> {{contacto.dni}} </td>
-        <td> {{contacto.fechanacimiento}} </td>
-      </tr>
-    </tbody>
-  </table>
-Esto no actualizaaaaa
-</div>
+  <thead class="thead-dark">
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Primer Apellido</th>
+      <th>Segundo Apellido</th>
+      <th>DNI</th>
+      <th>Fecha Nacimiento</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let contacto of Contactos">
+      <td>{{ contacto.idcontacto }}</td>
+      <td>{{ contacto.nombre }}</td>
+      <td>{{ contacto.apellido1 }}</td>
+      <td>{{ contacto.apellido2 }}</td>
+      <td>{{ contacto.dni }}</td>
+      <td>{{ contacto.fechanacimiento }}</td>
+    </tr>
+  </tbody>
+  <a routerLink="/contactos/contacto">
+    <button class="btn btn-group-lg">Añadir contacto</button>
+  </a>
+</table>
