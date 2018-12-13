@@ -40,7 +40,7 @@ public class ContactController {
 		return contactosServices.crear(contacto);
 	}
 	
-	@GetMapping(path = {"/{id}"})
+	@GetMapping(path = {"ficha/{id}"})
 	public Contacto findOne(@PathVariable("id") int id) {
 		return contactosServices.buscarPorId(id);
 	}

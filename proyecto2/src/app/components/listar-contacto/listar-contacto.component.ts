@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 
 import {Contacto} from '../../model/contacto.model';
 import {ContactoService} from '../../services/contacto.services';
+
 @Component({
   selector: 'app-listar-contacto',
   templateUrl: './listar-contacto.component.html',
@@ -23,4 +24,11 @@ deleteContacto(contacto: Contacto): void {
     this.Contactos = this.Contactos.filter(u => u !== contacto);
   })
 };
+listaDetallada(contacto: Contacto): void {
+  this.contactoService.getUser(contacto.idpersona)
+  .subscribe( data => {
+    this.Contactos = this.Contactos.filter(u => u !== contacto);
+  })
+};
+
 }

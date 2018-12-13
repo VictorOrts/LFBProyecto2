@@ -1,9 +1,9 @@
 import { Component, OnInit , Input} from '@angular/core';
 import { Contacto } from 'src/app/model/contacto.model';
-import { ActivatedRoute,Router } from '@angular/router';
+import { ActivatedRoute,Router,ParamMap } from '@angular/router';
 import { ContactoService } from 'src/app/services/contacto.services';
-import { Observable } from 'rxjs';
-
+import { Observable,Subscription } from 'rxjs';
+import { HttpParams } from '@angular/common/http';
 
 @Component({
   selector: 'app-ficha-detallada',
@@ -12,8 +12,8 @@ import { Observable } from 'rxjs';
 })
 export class FichaDetalladaComponent implements OnInit {
   contacto : Contacto;
-
-
+  id : string
+  sub: Subscription;
 
   constructor( private route: ActivatedRoute ,private router: Router,private contactoService:ContactoService ) {
 
@@ -23,8 +23,12 @@ export class FichaDetalladaComponent implements OnInit {
 
 
   ngOnInit() {
-
-
+    this.sub = this.route.params.subscribe(params => {
+      this.id = params['idpersona']; 
+    });
+    
+     //this.id = params['idpersona'];
+    this.contactoService.getUser(this.id).subscribe(data=> {this.contacto=data});
 
   };
 
