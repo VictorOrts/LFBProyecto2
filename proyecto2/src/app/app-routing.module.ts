@@ -1,3 +1,4 @@
+import { AddContactoComponent } from './components/add-contacto/add-contacto.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -5,7 +6,8 @@ import {ListarContactoComponent} from './components/listar-contacto/listar-conta
 
 
 const routes: Routes = [
-  { path:'contactos', component:ListarContactoComponent},
+  { path: 'contactos', component: ListarContactoComponent},
+  { path: 'addcontacto', component: AddContactoComponent}
 ];
 
 @NgModule({

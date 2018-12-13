@@ -1,17 +1,26 @@
+import { ContactoService } from './../../services/contacto.services';
 import { Component } from '@angular/core';
-import  { Contacto } from '../../model/contacto.model'
-
+import { Contacto } from '../../model/contacto.model';
+import { Router } from "@angular/router";
 
 @Component({
+  selector: 'app-add-contacto',
   templateUrl: './add-contacto.component.html'
+
 })
 export class AddContactoComponent {
 
   contacto: Contacto = new Contacto();
 
-  constructor( ) { }
+  constructor( private router: Router, private contactoService: ContactoService) {
 
-  ngOnInit() {
   }
+
+ createUser(): void{
+   this.contactoService.createUSer(this.contacto)
+   .subscribe(data => {
+     alert('User created succesfully');
+   });
+ }
 
 }

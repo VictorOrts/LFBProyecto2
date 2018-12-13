@@ -1,3 +1,95 @@
-<p>
-  add-contacto works!
-</p>
+<!-- Material form login -->
+<div class="card">
+  <h5 class="card-header info-color white-text text-center py-4">
+    <strong>Añade un nuevo contacto.</strong>
+  </h5>
+
+  <!-- Card content -->
+  <div class="card-body px-lg-5 pt-0">
+    <!-- Form -->
+    <form class="text-center" style="color: #757575;">
+      <br />
+      <br />
+      <div class="md-form">
+        <input
+          type="text"
+          [(ngModel)]="contacto.nombre"
+          placeholder="Nombre"
+          name="nombre"
+          class="form-control"
+          id="materialLoginFormEmail"
+        />
+      </div>
+      <br />
+      <div class="md-form">
+        <input
+          type="text"
+          [(ngModel)]="contacto.apellido1"
+          placeholder="Primer Apellido"
+          name="apellido1"
+          class="form-control"
+          id="materialLoginFormEmail"
+        />
+      </div>
+      <br />
+
+      <div class="md-form">
+        <input
+          type="text"
+          [(ngModel)]="contacto.apellido2"
+          placeholder="Segundo Apellido"
+          name="apellido2"
+          class="form-control"
+          id="materialLoginFormEmail"
+        />
+      </div>
+      <br>
+      <div class="md-form">
+        <input
+          type="text"
+          [(ngModel)]="contacto.dni"
+          placeholder="DNI/NIF/NIE/CIF..."
+          name="dni"
+          class="form-control"
+          id="materialLoginFormEmail"
+        />
+      </div>
+      <br>
+      <div class="md-form">
+        <input
+          type="date"
+          [(ngModel)]="contacto.fechanacimiento"
+          placeholder="Fecha de Nacimiento"
+          name="fechanacimiento"
+          class="form-control"
+          id="materialLoginFormEmail"
+        />
+      </div>
+      <br>
+      <div hidden>
+        <div class="md-form">
+          <input
+            type="number"
+            [(ngModel)]="contacto.idcontacto"
+            placeholder=""
+            name="ID"
+            class="form-control"
+            id="materialLoginFormEmail"
+          />
+        </div>
+      </div>
+
+
+      <!-- Sign in button -->
+      <button
+        class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0"
+        (click)="createUser()"
+      >
+        Añadir
+      </button>
+
+    </form>
+    <!-- Form -->
+  </div>
+</div>
+<!-- Material form login -->
