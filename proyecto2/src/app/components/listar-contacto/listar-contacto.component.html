@@ -12,6 +12,9 @@
         <th>Segundo Apellido</th>
         <th>DNI</th>
         <th>Fecha Nacimiento</th>
+        <th></th>
+        <th>OPCIONES</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -22,8 +25,15 @@
         <td> {{contacto.apellido2}} </td>
         <td> {{contacto.dni}} </td>
         <td> {{contacto.fechanacimiento}} </td>
+        <td> <button type="button" class="btn btn-primary">Editar</button></td>
+        <td> <button type="button" class="btn btn-danger">Borrar</button></td>
+        <td> <button type="button" class="btn btn-primary">Ficha Detallada</button></td>
+
       </tr>
     </tbody>
   </table>
+  <a routerLink="/contactos/contacto">
+    <button type="button" class="btn btn-primary">Primary</button>
+  </a>
 Esto no actualizaaaaa
 </div>
