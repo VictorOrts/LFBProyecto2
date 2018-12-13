@@ -17,4 +17,10 @@ export class ContactoService {
     public createUSer(contacto) {
       return this.http.post<Contacto>(this.host, contacto);
     }
+
+    public getUser(){
+        return this.http.get<Contacto>(this.host + '/{id}');
+    }
+
 }
+
