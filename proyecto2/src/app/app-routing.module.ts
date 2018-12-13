@@ -9,7 +9,7 @@ import {FichaDetalladaComponent} from './components/ficha-detallada/ficha-detall
 const routes: Routes = [
   { path: 'contactos/contacto', component: AddContactoComponent},
   { path: 'contactos', component: ListarContactoComponent},
-  { path: 'contactos/1' , component: FichaDetalladaComponent}
+  { path: 'contactos/:idcontacto' , component: FichaDetalladaComponent}
 
 ];
 

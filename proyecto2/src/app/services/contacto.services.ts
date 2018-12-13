@@ -18,8 +18,8 @@ export class ContactoService {
       return this.http.post<Contacto>(this.host, contacto);
     }
 
-    public getUser(){
-        return this.http.get<Contacto>(this.host + '/{id}');
+    public getUser(id:string){
+        return this.http.get<Contacto>(this.host+'/'+id);
     }
 
 }
