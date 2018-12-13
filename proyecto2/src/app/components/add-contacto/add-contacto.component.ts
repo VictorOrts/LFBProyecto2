@@ -1,5 +1,5 @@
 import { ContactoService } from './../../services/contacto.services';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Contacto } from '../../model/contacto.model';
 import { Router } from '@angular/router';
 
@@ -8,19 +8,17 @@ import { Router } from '@angular/router';
   templateUrl: './add-contacto.component.html'
 
 })
-export class AddContactoComponent {
+export class AddContactoComponent{
+contacto: Contacto = new Contacto();
+constructor(private router: Router, private contactoService: ContactoService){
 
-  contacto: Contacto = new Contacto();
+}
+createContacto (): void {
+  this.contactoService.createUser(this.contacto)
+  .subscribe(data => {
+    alert('user created');
 
-  constructor( private router: Router, private contactoService: ContactoService) {
-
-  }
-
- createUser(): void{
-   this.contactoService.createUSer(this.contacto)
-   .subscribe(data => {
-     alert('User created succesfully');
-   });
- }
+  });
+}
 
 }
