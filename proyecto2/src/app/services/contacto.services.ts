@@ -13,4 +13,10 @@ export class ContactoService{
     public getUsers(){
         return this.http.get<Contacto[]>(this.host);
     }
+
+    public getUser(){
+        return this.http.get<Contacto>(this.host +"/{id}");
+    }
+
 }
+
