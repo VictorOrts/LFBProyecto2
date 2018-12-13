@@ -1,10 +1,10 @@
 import { ContactoService } from './../../services/contacto.services';
 import { Component } from '@angular/core';
 import { Contacto } from '../../model/contacto.model';
-import { Router } from "@angular/router";
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-add-contacto',
+
   templateUrl: './add-contacto.component.html'
 
 })

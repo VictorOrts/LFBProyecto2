@@ -1,43 +1,51 @@
-<p>
-  ficha-detallada works!
-</p>
+<p>ficha-detallada works!</p>
+<div class="card">
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th>Contacto</th>
+        <th>Datos</th>
+      </tr>
+    </thead>
 
-<table class="table">
-  <thead class="thead-dark">
-  <tr>
-    <th>Contacto</th>
-    <th>Datos</th>
->
-    
-</tr>
-  </thead> 
-  
     <dl>
-    <tr> Nombre:</tr>
-    <tr>Primer apellido:</tr>
-    <tr>Segundo apellido:</tr>
-    <tr>Fecha de nacimiento:</tr>
-    <tr>DNI:</tr>
-    <tr>Teléfono:</tr>
-    <tr>Provincia:</tr>
-    <tr>Localidad:</tr>
-    <tr>Dirección:</tr>
-    <tr>Código postal:</tr>
-    
-   
+      <tr>
+        Nombre:
+      </tr>
+      <tr>
+        Primer apellido:
+      </tr>
+      <tr>
+        Segundo apellido:
+      </tr>
+      <tr>
+        Fecha de nacimiento:
+      </tr>
+      <tr>
+        DNI:
+      </tr>
+      <tr>
+        Teléfono:
+      </tr>
+      <tr>
+        Provincia:
+      </tr>
+      <tr>
+        Localidad:
+      </tr>
+      <tr>
+        Dirección:
+      </tr>
+      <tr>
+        Código postal:
+      </tr>
 
-
-
- <tbody> 
-   <tr>
-  <td>{{contacto.idcontacto}}</td>
-  <td>{{contacto.nombre}}</td>
-
-</tr>
- </tbody>
-
-
-
-
-
-</table>
+      <tbody>
+        <tr>
+          <td>{{ contacto.idcontacto }}</td>
+          <td>{{ contacto.nombre }}</td>
+        </tr>
+      </tbody>
+    </dl>
+  </table>
+</div>
