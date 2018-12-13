@@ -51,7 +51,7 @@ public class ContactController {
 		return contactosServices.editar(contacto);
 	}
 	
-	@DeleteMapping(path= {"/{id}"})
+	@DeleteMapping(path= {"{id}"})
 	public Contacto delete(@PathVariable("id")int id) {
 		return contactosServices.borrar(id);
 	}

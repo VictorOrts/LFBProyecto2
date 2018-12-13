@@ -12,21 +12,20 @@ import { Observable } from 'rxjs';
 })
 export class FichaDetalladaComponent implements OnInit {
   contacto : Contacto;
- 
- 
- 
+
+
+
   constructor( private route: ActivatedRoute ,private router: Router,private contactoService:ContactoService ) {
 
- 
+
 
   }
 
- 
+
   ngOnInit() {
-   
-     
-  this.contactoService.getUser('6').subscribe(data=>{this.contacto=data});
-   
+
+
+
   };
 
 }
