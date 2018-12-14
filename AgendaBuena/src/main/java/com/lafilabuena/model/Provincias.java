@@ -1,6 +1,5 @@
 package com.lafilabuena.model;
 
-
 /**
  * Clase Provincias
  * 
@@ -15,33 +14,71 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ * The Class Provincias.
+ */
 @Entity
 @Table(name = "provincia")
 public class Provincias {
 
+	/** The idprovincia. */
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "idprovincia")
 	private int idprovincia;
+
+	/** The provincia. */
 	@Column(name = "provincia")
 	private String provincia;
-	
+
+	/**
+	 * Instantiates a new provincias.
+	 */
 	public Provincias() {
 
 	}
+
+	/**
+	 * Gets the idprovincia.
+	 *
+	 * @return the idprovincia
+	 */
 	public int getIdprovincia() {
 		return idprovincia;
 	}
+
+	/**
+	 * Sets the idprovincia.
+	 *
+	 * @param idprovincia the new idprovincia
+	 */
 	public void setIdprovincia(int idprovincia) {
 		this.idprovincia = idprovincia;
 	}
+
+	/**
+	 * Gets the provincia.
+	 *
+	 * @return the provincia
+	 */
 	public String getProvincia() {
 		return provincia;
 	}
+
+	/**
+	 * Sets the provincia.
+	 *
+	 * @param provincia the new provincia
+	 */
 	public void setProvincia(String provincia) {
 		this.provincia = provincia;
 	}
-	
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
@@ -52,7 +89,5 @@ public class Provincias {
 		builder.append("]");
 		return builder.toString();
 	}
-
-	
 
 }

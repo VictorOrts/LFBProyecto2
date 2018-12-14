@@ -11,9 +11,13 @@ import org.springframework.stereotype.Repository;
  *
  */
 
-
 import com.lafilabuena.model.Contacto;
 
+/**
+ * The Interface ContactoRepository.
+ * 
+ * @author Jorge Aviles.
+ */
 @Repository
 public interface ContactoRepository extends CrudRepository<Contacto, Integer> {
 

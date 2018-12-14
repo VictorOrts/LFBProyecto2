@@ -21,17 +21,25 @@ import com.lafilabuena.model.Contacto;
 
 import com.lafilabuena.services.ContactosServicesImpl;
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class ContactosController.
+ */
 @Controller("contactosController")
 
 public class ContactosController {
 
+	/** The contact services. */
 	@Autowired
 	@Qualifier("contactosServices")
 	public ContactosServicesImpl contactServices;
 
+	/** The provinciasrepo. */
 	@Autowired
 	@Qualifier("provinciasRepository")
 	public ProvinciasRepository provinciasrepo;
+
+	/** The direccion repo. */
 	@Autowired
 	@Qualifier("direccionRepository")
 	public DireccionRepository direccionRepo;
@@ -43,12 +51,22 @@ public class ContactosController {
 //		ModelAndView mv= new ModelAndView();
 //		return mv.add)
 //	}
+	/**
+	 * Redirect tohome.
+	 *
+	 * @return the string
+	 */
 //	
 	@GetMapping(" ")
 	public String redirectTohome() {
 		return "redirect:/";
 	}
 
+	/**
+	 * Listar contactos.
+	 *
+	 * @return the model and view
+	 */
 	@GetMapping("/")
 	public ModelAndView listarContactos() {
 		ModelAndView mv = new ModelAndView("ListaView");
@@ -57,6 +75,13 @@ public class ContactosController {
 		return mv.addObject("contactos", contactServices.listar());
 	}
 
+	/**
+	 * Ficha detallada.
+	 *
+	 * @param id the id
+	 * @param model the model
+	 * @return the string
+	 */
 	@GetMapping("/mostrarFicha")
 	public String fichaDetallada(@RequestParam(name = "id") int id, Model model) {
 
@@ -70,6 +95,13 @@ public class ContactosController {
 
 	}
 
+	/**
+	 * Crear usuario.
+	 *
+	 * @param contacto the contacto
+	 * @param model the model
+	 * @return the string
+	 */
 	@PostMapping("/crearusuario")
 	public String crearUsuario(@ModelAttribute(name = "contacto1") Contacto contacto, Model model) {
 		contactServices.crear(contacto);
@@ -78,6 +110,13 @@ public class ContactosController {
 
 	}
 
+	/**
+	 * Redirect contact form 1.
+	 *
+	 * @param id the id
+	 * @param model the model
+	 * @return the string
+	 */
 	@GetMapping("/addContacto")
 	private String redirectContactForm1(@RequestParam(name = "id") int id, Model model) {
 		Contacto contacto1 = new Contacto();
@@ -90,6 +129,12 @@ public class ContactosController {
 
 	}
 
+	/**
+	 * Delete.
+	 *
+	 * @param id the id
+	 * @return the model and view
+	 */
 	@GetMapping("/borrar")
 	public ModelAndView delete(@RequestParam(name = "id", required = true) int id) {
 		contactServices.borrar(id);

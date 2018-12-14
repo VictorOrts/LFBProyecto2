@@ -15,13 +15,23 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.lafilabuena.controller.ContactosController;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Test01.
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class Test01 {
 
+	/** The contactos controller. */
 	@Autowired
 	private ContactosController contactosController;
 	
+	/**
+	 * Contex loads.
+	 *
+	 * @throws Exception the exception
+	 */
 	@Test
 	public void contexLoads() throws Exception {
 		assertThat(contactosController).isNotNull();

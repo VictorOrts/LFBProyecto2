@@ -17,13 +17,23 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.lafilabuena.services.ContactosServicesImpl;
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Test04.
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class Test04 {
 	
+	/** The contactos services. */
 	@Autowired
 	private ContactosServicesImpl contactosServices;
 	
+	/**
+	 * Buscar contacto.
+	 *
+	 * @throws Exception the exception
+	 */
 	@Test
 	
 	public void buscarContacto() throws Exception{

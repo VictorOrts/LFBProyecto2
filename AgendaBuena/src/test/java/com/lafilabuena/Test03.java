@@ -16,18 +16,30 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import com.lafilabuena.model.Contacto;
 import com.lafilabuena.services.ContactosServicesImpl;
+// TODO: Auto-generated Javadoc
+
+/**
+ * The Class Test03.
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class Test03 {
 
+	/** The contactos services. */
 	@Autowired
 	private ContactosServicesImpl contactosServices;
 	
+	/** The c 1. */
 	private Contacto c1=new Contacto();
 	
 	
 	
 	
+	/**
+	 * Crear contacto.
+	 *
+	 * @throws Exception the exception
+	 */
 	@Test
 	public void crearContacto() throws Exception {
 		c1.setNombre("jorge");

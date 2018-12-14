@@ -19,19 +19,33 @@ import com.lafilabuena.model.Contacto;
 
 
 
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Test02.
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest
 
 public class Test02 {
 	
 
+	/** The contact. */
 	private Contacto contact;
+	
+	/** The contact 2. */
 	private Contacto contact2;
+	
+	/** The contact 3. */
 	private Contacto contact3;
 
 	
 	
 	
+	/**
+	 * Nombre vacio.
+	 *
+	 * @throws Exception the exception
+	 */
 	@Test
 	public void nombreVacio() throws Exception {
 		contact = new Contacto();
